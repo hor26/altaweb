@@ -1,0 +1,40 @@
+<svg width="1080" height="1080" viewBox="0 0 1080 1080" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fondo negro -->
+  <circle cx="540" cy="540" r="540" fill="#0D0B1E"/>
+
+  <!-- Glow violeta central -->
+  <radialGradient id="gv" cx="50%" cy="48%" r="52%">
+    <stop offset="0%" stop-color="#7C3AED" stop-opacity="0.28"/>
+    <stop offset="100%" stop-color="#7C3AED" stop-opacity="0"/>
+  </radialGradient>
+  <circle cx="540" cy="540" r="540" fill="url(#gv)"/>
+
+  <!-- Glow lima superior (apex) -->
+  <radialGradient id="gl" cx="50%" cy="22%" r="32%">
+    <stop offset="0%" stop-color="#A3E635" stop-opacity="0.16"/>
+    <stop offset="100%" stop-color="#A3E635" stop-opacity="0"/>
+  </radialGradient>
+  <circle cx="540" cy="540" r="540" fill="url(#gl)"/>
+
+  <!-- Trazo izquierdo de la A — violeta -->
+  <line x1="292" y1="750" x2="540" y2="268" stroke="#7C3AED" stroke-width="58" stroke-linecap="round"/>
+
+  <!-- Trazo derecho de la A — lima -->
+  <line x1="540" y1="268" x2="788" y2="750" stroke="#A3E635" stroke-width="58" stroke-linecap="round"/>
+
+  <!-- Barra central — violeta claro -->
+  <line x1="382" y1="560" x2="698" y2="560" stroke="#9F67F5" stroke-width="38" stroke-linecap="round"/>
+
+  <!-- Punto lima en el apex -->
+  <circle cx="540" cy="268" r="38" fill="#A3E635"/>
+
+  <!-- Wordmark -->
+  <text x="540" y="880" text-anchor="middle"
+        font-family="Arial Black, Arial, sans-serif"
+        font-size="88" font-weight="900"
+        fill="#FFFFFF" letter-spacing="6">ALTA</text>
+  <text x="540" y="960" text-anchor="middle"
+        font-family="Arial, sans-serif"
+        font-size="54" font-weight="400"
+        fill="#A3E635" letter-spacing="22">WEB</text>
+</svg>

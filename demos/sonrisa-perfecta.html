@@ -1,0 +1,1718 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sonrisa Perfecta — Odontología Integral en Miraflores, Lima. Dr. Carlos Mendoza Ríos. Blanqueamiento, ortodoncia, implantes y más. Agenda tu cita hoy." />
+  <meta property="og:title" content="Sonrisa Perfecta — Odontología Integral | Miraflores, Lima" />
+  <meta property="og:description" content="Tu mejor sonrisa comienza aquí. Tecnología moderna, trato personalizado y más de 500 pacientes satisfechos." />
+  <meta property="og:type" content="website" />
+  <title>Sonrisa Perfecta — Odontología Integral | Dr. Carlos Mendoza Ríos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ==============================
+       RESET & BASE
+    ============================== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --primary:    #0A2540;   /* Navy profundo */
+      --secondary:  #C9A84C;   /* Oro */
+      --accent:     #F4E8C1;   /* Champagne */
+      --accent2:    #E8F0F7;   /* Azul hielo suave */
+      --text:       #1A1A2A;
+      --bg:         #FAFAF8;   /* Blanco cálido */
+      --white:      #FFFFFF;
+      --gray:       #6B7280;
+      --gray-light: #9CA3AF;
+      --wa:         #25D366;
+      --radius:     18px;
+      --shadow:     0 4px 28px rgba(10,37,64,0.09);
+      --shadow-md:  0 10px 40px rgba(10,37,64,0.16);
+      --gold-grad:  linear-gradient(135deg, #C9A84C, #E8C96A);
+      --navy-grad:  linear-gradient(135deg, #0A2540 0%, #133357 100%);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    h1,h2,h3,h4 { font-family: 'Poppins', sans-serif; line-height: 1.2; }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+    section { padding: 88px 0; }
+
+    .container { max-width: 1160px; margin: 0 auto; padding: 0 28px; }
+
+    .section-label {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--secondary);
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 50px;
+      margin-bottom: 14px;
+    }
+
+    .section-title {
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 10px;
+      color: var(--primary);
+    }
+
+    .section-sub {
+      text-align: center;
+      color: var(--gray);
+      font-size: 1rem;
+      margin-bottom: 56px;
+      max-width: 540px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .text-gold { color: var(--secondary); }
+    .text-center { text-align: center; }
+
+    /* ==============================
+       DIVIDER GOLD
+    ============================== */
+    .gold-divider {
+      width: 50px;
+      height: 3px;
+      background: var(--gold-grad);
+      border-radius: 3px;
+      margin: 0 auto 18px;
+    }
+
+    /* ==============================
+       BUTTONS
+    ============================== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 15px 30px;
+      border-radius: 50px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 0.92rem;
+      cursor: pointer;
+      transition: all 0.28s cubic-bezier(.4,0,.2,1);
+      border: 2px solid transparent;
+      letter-spacing: 0.2px;
+    }
+
+    .btn-gold {
+      background: var(--gold-grad);
+      color: var(--primary);
+      box-shadow: 0 4px 18px rgba(201,168,76,0.35);
+    }
+    .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(201,168,76,0.5); }
+
+    .btn-outline-white {
+      background: transparent;
+      color: var(--white);
+      border-color: rgba(255,255,255,0.5);
+    }
+    .btn-outline-white:hover { background: rgba(255,255,255,0.12); transform: translateY(-2px); }
+
+    .btn-navy {
+      background: var(--primary);
+      color: var(--white);
+    }
+    .btn-navy:hover { background: #133357; transform: translateY(-2px); box-shadow: 0 6px 22px rgba(10,37,64,0.3); }
+
+    .btn-wa {
+      background: var(--wa);
+      color: var(--white);
+      box-shadow: 0 4px 16px rgba(37,211,102,0.3);
+    }
+    .btn-wa:hover { background: #20c55a; transform: translateY(-2px); box-shadow: 0 8px 26px rgba(37,211,102,0.45); }
+
+    /* ==============================
+       FADE-IN ANIMATIONS
+    ============================== */
+    .fade-in-up {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .fade-in-up.visible { opacity: 1; transform: translateY(0); }
+
+    /* ==============================
+       NAVBAR
+    ============================== */
+    .navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(10,37,64,0.96);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(201,168,76,0.18);
+      transition: box-shadow 0.3s ease;
+    }
+    .navbar.scrolled { box-shadow: 0 2px 32px rgba(10,37,64,0.3); }
+
+    .navbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 70px;
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--white);
+    }
+    .nav-logo span { color: var(--secondary); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.8);
+      transition: color 0.2s;
+      letter-spacing: 0.3px;
+    }
+    .nav-links a:hover { color: var(--secondary); }
+
+    .nav-cta {
+      background: var(--gold-grad) !important;
+      color: var(--primary) !important;
+      padding: 9px 22px;
+      border-radius: 50px;
+      font-weight: 700 !important;
+      font-size: 0.82rem !important;
+      letter-spacing: 0.3px;
+      transition: all 0.25s !important;
+    }
+    .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 4px 16px rgba(201,168,76,0.4); }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 6px;
+    }
+    .hamburger span {
+      display: block;
+      width: 26px;
+      height: 2px;
+      background: var(--secondary);
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+    .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      background: #0A2540;
+      border-top: 1px solid rgba(201,168,76,0.2);
+      padding: 14px 28px 24px;
+      gap: 2px;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      padding: 13px 0;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.8);
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      transition: color 0.2s;
+    }
+    .mobile-menu a:last-child { border-bottom: none; }
+    .mobile-menu a:hover { color: var(--secondary); }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+    }
+
+    /* ==============================
+       SECCIÓN 1 — HERO
+    ============================== */
+    .hero {
+      min-height: 100vh;
+      background: var(--navy-grad);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 130px 28px 90px;
+      overflow: hidden;
+    }
+
+    /* Textura sutil tipo lujo */
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(201,168,76,0.08) 0%, transparent 70%),
+        url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='rgba(201,168,76,0.06)' stroke-width='1'%3E%3Ccircle cx='30' cy='30' r='20'/%3E%3C/g%3E%3C/svg%3E") repeat;
+      pointer-events: none;
+    }
+
+    .hero-content { position: relative; z-index: 1; max-width: 760px; }
+
+    .hero-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    .hero-logo-text {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--white);
+    }
+    .hero-logo-text span { color: var(--secondary); }
+
+    .hero-eyebrow {
+      display: inline-block;
+      border: 1px solid rgba(201,168,76,0.5);
+      color: var(--secondary);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      padding: 5px 16px;
+      border-radius: 50px;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.2rem, 5.5vw, 3.8rem);
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 20px;
+      line-height: 1.15;
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: var(--secondary);
+    }
+
+    .hero-sub {
+      font-size: clamp(1rem, 2vw, 1.15rem);
+      color: rgba(255,255,255,0.72);
+      max-width: 520px;
+      margin: 0 auto 44px;
+      line-height: 1.8;
+    }
+
+    .hero-btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center;
+      margin-bottom: 52px;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      justify-content: center;
+    }
+
+    .badge {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(201,168,76,0.3);
+      color: rgba(255,255,255,0.85);
+      border-radius: 50px;
+      padding: 8px 18px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+    }
+
+    /* ==============================
+       SECCIÓN 2 — SOBRE EL DOCTOR
+    ============================== */
+    .about { background: var(--white); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 72px;
+      align-items: center;
+    }
+
+    .doctor-photo-wrap {
+      position: relative;
+    }
+
+    .doctor-photo-frame {
+      position: relative;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 24px 64px rgba(10,37,64,0.22);
+      aspect-ratio: 4/5;
+      background: var(--accent2);
+    }
+
+    .doctor-photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+    }
+
+    /* Fallback cuando no carga imagen */
+    .doctor-photo-frame .avatar-fallback {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--navy-grad);
+      font-family: 'Poppins', sans-serif;
+      font-size: 5rem;
+      font-weight: 700;
+      color: var(--white);
+    }
+
+    /* Ornamento dorado decorativo */
+    .photo-deco {
+      position: absolute;
+      top: -16px;
+      left: -16px;
+      width: 80px;
+      height: 80px;
+      border: 3px solid var(--secondary);
+      border-radius: 16px;
+      opacity: 0.5;
+      pointer-events: none;
+    }
+    .photo-deco2 {
+      position: absolute;
+      bottom: -16px;
+      right: -16px;
+      width: 80px;
+      height: 80px;
+      border: 3px solid var(--secondary);
+      border-radius: 16px;
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+    .exp-badge {
+      position: absolute;
+      bottom: 20px;
+      left: -20px;
+      background: var(--white);
+      border-radius: 14px;
+      padding: 12px 18px;
+      box-shadow: 0 8px 28px rgba(10,37,64,0.18);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .exp-badge-num {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--primary);
+      line-height: 1;
+    }
+    .exp-badge-label {
+      font-size: 0.72rem;
+      color: var(--gray);
+      line-height: 1.4;
+      font-weight: 500;
+    }
+    .exp-badge-label strong { display: block; color: var(--secondary); }
+
+    .about-content .section-label { display: block; text-align: left; }
+
+    .about-content h2 {
+      font-size: clamp(1.6rem, 3vw, 2.1rem);
+      margin-bottom: 18px;
+      color: var(--primary);
+    }
+
+    .about-content p {
+      color: var(--gray);
+      margin-bottom: 26px;
+      font-size: 0.97rem;
+      line-height: 1.85;
+    }
+
+    .about-list {
+      list-style: none;
+      margin-bottom: 36px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .about-list li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    .check-icon {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 900px) {
+      .about-grid { grid-template-columns: 1fr; gap: 48px; }
+      .exp-badge { left: 12px; }
+      .about-content .section-label { text-align: center; }
+      .about-content h2 { text-align: center; }
+      .about-content p { text-align: center; }
+      .about-list li { justify-content: center; }
+      .about-content .btn { display: flex; justify-content: center; }
+      .doctor-photo-wrap { max-width: 400px; margin: 0 auto; }
+    }
+
+    /* ==============================
+       SECCIÓN 3 — SERVICIOS
+    ============================== */
+    .services { background: var(--bg); }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+    }
+
+    .service-card {
+      background: var(--white);
+      border: 1px solid rgba(10,37,64,0.07);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: all 0.32s cubic-bezier(.4,0,.2,1);
+      cursor: default;
+    }
+    .service-card:hover {
+      border-color: var(--secondary);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-5px);
+    }
+
+    .service-img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      display: block;
+      background: var(--accent2);
+    }
+
+    /* Fallback imagen servicio */
+    .service-img-placeholder {
+      width: 100%;
+      height: 150px;
+      background: linear-gradient(135deg, var(--accent2), var(--accent));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .service-body { padding: 18px 18px 22px; }
+
+    .service-icon-wrap {
+      width: 42px;
+      height: 42px;
+      background: var(--navy-grad);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 12px;
+    }
+
+    .service-card h3 {
+      font-size: 0.92rem;
+      font-weight: 600;
+      margin-bottom: 7px;
+      color: var(--primary);
+    }
+
+    .service-card p {
+      font-size: 0.82rem;
+      color: var(--gray);
+      line-height: 1.6;
+    }
+
+    .service-tag {
+      display: inline-block;
+      margin-top: 10px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: var(--secondary);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 1024px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 580px)  { .services-grid { grid-template-columns: 1fr; } }
+
+    /* ==============================
+       SECCIÓN 4 — ¿POR QUÉ ELEGIRNOS?
+    ============================== */
+    .why {
+      background: var(--navy-grad);
+      padding: 88px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .why::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 100% at 50% 0%, rgba(201,168,76,0.07), transparent 70%);
+      pointer-events: none;
+    }
+
+    .why .section-title { color: var(--white); }
+    .why .section-sub { color: rgba(255,255,255,0.6); }
+    .why .gold-divider { margin-bottom: 14px; }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .why-card {
+      text-align: center;
+      padding: 40px 28px;
+      background: rgba(255,255,255,0.05);
+      border-radius: var(--radius);
+      border: 1px solid rgba(201,168,76,0.2);
+      transition: background 0.3s, border-color 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .why-card:hover {
+      background: rgba(255,255,255,0.09);
+      border-color: rgba(201,168,76,0.5);
+    }
+
+    .why-icon {
+      width: 64px;
+      height: 64px;
+      background: linear-gradient(135deg, rgba(201,168,76,0.2), rgba(201,168,76,0.06));
+      border: 1px solid rgba(201,168,76,0.3);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 1.8rem;
+    }
+
+    .why-card h3 {
+      color: var(--white);
+      font-size: 1.1rem;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    .why-card p {
+      color: rgba(255,255,255,0.68);
+      font-size: 0.88rem;
+      line-height: 1.75;
+    }
+
+    @media (max-width: 768px) { .why-grid { grid-template-columns: 1fr; } }
+
+    /* ==============================
+       SECCIÓN 5 — CONTADORES
+    ============================== */
+    .counters { background: var(--white); padding: 80px 0; }
+
+    .counters-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      text-align: center;
+    }
+
+    .counter-item {
+      padding: 36px 20px;
+      border-radius: var(--radius);
+      border: 1px solid rgba(10,37,64,0.08);
+      background: var(--bg);
+      position: relative;
+      overflow: hidden;
+    }
+    .counter-item::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--gold-grad);
+    }
+
+    .counter-number {
+      font-family: 'Poppins', sans-serif;
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--primary);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .counter-label {
+      font-size: 0.82rem;
+      color: var(--gray);
+      font-weight: 500;
+      letter-spacing: 0.3px;
+    }
+
+    @media (max-width: 768px) { .counters-grid { grid-template-columns: repeat(2, 1fr); } }
+
+    /* ==============================
+       SECCIÓN 6 — TESTIMONIOS
+    ============================== */
+    .testimonials { background: var(--bg); }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .testi-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 34px 28px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(10,37,64,0.06);
+      transition: box-shadow 0.3s, transform 0.3s;
+      position: relative;
+    }
+    .testi-card:hover { box-shadow: var(--shadow-md); transform: translateY(-4px); }
+
+    .testi-quote {
+      font-size: 2.4rem;
+      color: var(--accent);
+      font-family: Georgia, serif;
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+
+    .stars {
+      color: var(--secondary);
+      font-size: 0.95rem;
+      margin-bottom: 14px;
+      letter-spacing: 3px;
+    }
+
+    .testi-text {
+      font-size: 0.88rem;
+      color: var(--gray);
+      line-height: 1.8;
+      font-style: italic;
+      margin-bottom: 22px;
+    }
+
+    .testi-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-top: 1px solid rgba(10,37,64,0.07);
+      padding-top: 18px;
+    }
+
+    .testi-avatar {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 0.92rem;
+      color: var(--white);
+      flex-shrink: 0;
+    }
+
+    .testi-info strong {
+      display: block;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--primary);
+    }
+
+    .testi-service {
+      font-size: 0.75rem;
+      color: var(--secondary);
+      font-weight: 500;
+    }
+
+    @media (max-width: 900px) { .testimonials-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; } }
+
+    /* ==============================
+       SECCIÓN 7 — CONTACTO
+    ============================== */
+    .contact { background: var(--white); }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    .contact-info h2 {
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      margin-bottom: 32px;
+      color: var(--primary);
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 26px;
+    }
+
+    .contact-icon {
+      width: 46px;
+      height: 46px;
+      background: var(--navy-grad);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .contact-item-body strong {
+      display: block;
+      font-weight: 600;
+      font-size: 0.88rem;
+      color: var(--primary);
+      margin-bottom: 3px;
+    }
+
+    .contact-item-body span {
+      font-size: 0.86rem;
+      color: var(--gray);
+      line-height: 1.6;
+    }
+
+    .contact-map iframe {
+      width: 100%;
+      height: 340px;
+      border-radius: var(--radius);
+      border: none;
+      box-shadow: var(--shadow-md);
+    }
+
+    .map-label {
+      font-size: 0.78rem;
+      color: var(--gray-light);
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr; } }
+
+    /* ==============================
+       FOOTER
+    ============================== */
+    footer {
+      background: #060F1A;
+      color: var(--white);
+      padding: 64px 0 0;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 52px;
+      margin-bottom: 52px;
+    }
+
+    .footer-brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--white);
+    }
+    .footer-brand-logo span { color: var(--secondary); }
+
+    .footer-slogan {
+      font-size: 0.87rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .footer-col h4 {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--secondary);
+      margin-bottom: 18px;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+    }
+
+    .footer-links a {
+      font-size: 0.87rem;
+      color: rgba(255,255,255,0.6);
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--secondary); }
+
+    .social-links { display: flex; gap: 12px; flex-wrap: wrap; }
+
+    .social-link {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.07);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.25s;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .social-link:hover { background: var(--secondary); border-color: var(--secondary); transform: translateY(-2px); }
+
+    .footer-divider {
+      border: none;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      margin: 0;
+    }
+
+    .footer-bottom {
+      padding: 22px 0 16px;
+      text-align: center;
+    }
+
+    .footer-copyright {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 6px;
+    }
+
+    .footer-credit {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.25);
+      line-height: 1.6;
+    }
+
+    .footer-credit a {
+      color: rgba(201,168,76,0.55);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-credit a:hover { color: var(--secondary); }
+
+    @media (max-width: 768px) { .footer-grid { grid-template-columns: 1fr; gap: 32px; } }
+
+    /* ==============================
+       BOTÓN FLOTANTE WHATSAPP
+    ============================== */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 26px;
+      right: 26px;
+      z-index: 9999;
+      width: 62px;
+      height: 62px;
+      background: var(--wa);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 22px rgba(37,211,102,0.45);
+      animation: pulse 2.2s infinite;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 30px rgba(37,211,102,0.65);
+      animation: none;
+    }
+
+    .wa-tooltip {
+      position: absolute;
+      right: 74px;
+      background: var(--primary);
+      color: var(--white);
+      font-size: 0.76rem;
+      font-weight: 600;
+      padding: 7px 14px;
+      border-radius: 9px;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s;
+      box-shadow: var(--shadow);
+    }
+    .wa-tooltip::after {
+      content: '';
+      position: absolute;
+      top: 50%; right: -6px;
+      transform: translateY(-50%);
+      border: 6px solid transparent;
+      border-left-color: var(--primary);
+      border-right: none;
+    }
+    .whatsapp-float:hover .wa-tooltip { opacity: 1; }
+
+    @keyframes pulse {
+      0%   { box-shadow: 0 0 0 0 rgba(37,211,102,0.6); }
+      70%  { box-shadow: 0 0 0 16px rgba(37,211,102,0); }
+      100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ================================================
+     NAVBAR
+================================================ -->
+<nav class="navbar" id="navbar" role="navigation" aria-label="Menú principal">
+  <div class="navbar-inner">
+    <a href="#inicio" class="nav-logo" aria-label="Sonrisa Perfecta — Inicio">
+      <svg width="28" height="28" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <ellipse cx="30" cy="20" rx="18" ry="16" fill="#C9A84C"/>
+        <ellipse cx="22" cy="38" rx="10" ry="14" fill="#E8C96A" opacity="0.85"/>
+        <ellipse cx="38" cy="38" rx="10" ry="14" fill="#E8C96A" opacity="0.85"/>
+        <ellipse cx="30" cy="20" rx="10" ry="9" fill="white" opacity="0.25"/>
+      </svg>
+      Sonrisa <span>Perfecta</span>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#nosotros">Nosotros</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+      <li><a href="https://wa.me/51999888777?text=Hola,%20quiero%20agendar%20una%20cita" target="_blank" rel="noopener" class="nav-cta">Agendar cita</a></li>
+    </ul>
+
+    <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <div class="mobile-menu" id="mobileMenu" role="menu">
+    <a href="#inicio" onclick="closeMobileMenu()">Inicio</a>
+    <a href="#servicios" onclick="closeMobileMenu()">Servicios</a>
+    <a href="#nosotros" onclick="closeMobileMenu()">Nosotros</a>
+    <a href="#contacto" onclick="closeMobileMenu()">Contacto</a>
+    <a href="https://wa.me/51999888777?text=Hola,%20quiero%20agendar%20una%20cita" target="_blank" rel="noopener" style="color:var(--secondary);font-weight:700;">📅 Agendar cita</a>
+  </div>
+</nav>
+
+
+<!-- ================================================
+     SECCIÓN: HERO
+================================================ -->
+<section class="hero" id="inicio" aria-label="Portada">
+  <div class="hero-content">
+    <div class="hero-logo fade-in-up visible">
+      <svg width="40" height="40" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <ellipse cx="30" cy="20" rx="18" ry="16" fill="#C9A84C"/>
+        <ellipse cx="22" cy="38" rx="10" ry="14" fill="#E8C96A" opacity="0.9"/>
+        <ellipse cx="38" cy="38" rx="10" ry="14" fill="#E8C96A" opacity="0.9"/>
+        <ellipse cx="30" cy="20" rx="10" ry="9" fill="white" opacity="0.2"/>
+      </svg>
+      <span class="hero-logo-text">Sonrisa <span>Perfecta</span></span>
+    </div>
+
+    <div class="hero-eyebrow fade-in-up visible" style="transition-delay:0.05s">
+      Odontología Premium · Miraflores, Lima
+    </div>
+
+    <h1 class="fade-in-up visible" style="transition-delay:0.12s">
+      Tu mejor sonrisa<br/><em>comienza aquí</em>
+    </h1>
+
+    <p class="hero-sub fade-in-up visible" style="transition-delay:0.22s">
+      Odontología de calidad, con tecnología de vanguardia y el trato personalizado
+      que mereces. El Dr. Mendoza cuida tu salud bucal con dedicación y precisión.
+    </p>
+
+    <div class="hero-btns fade-in-up visible" style="transition-delay:0.32s">
+      <a href="https://wa.me/51999888777?text=Hola,%20quiero%20agendar%20una%20cita" target="_blank" rel="noopener" class="btn btn-gold">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        📅 Agenda tu cita por WhatsApp
+      </a>
+      <a href="#servicios" class="btn btn-outline-white">Ver nuestros servicios</a>
+    </div>
+
+    <div class="hero-badges fade-in-up visible" style="transition-delay:0.42s">
+      <span class="badge">✓ Sin dolor</span>
+      <span class="badge">✓ Tecnología digital</span>
+      <span class="badge">✓ +500 pacientes satisfechos</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================
+     SECCIÓN: SOBRE EL DOCTOR
+================================================ -->
+<section class="about" id="nosotros">
+  <div class="container">
+    <div class="about-grid">
+
+      <!-- Foto del doctor -->
+      <div class="doctor-photo-wrap fade-in-up">
+        <div class="photo-deco" aria-hidden="true"></div>
+        <div class="photo-deco2" aria-hidden="true"></div>
+        <div class="doctor-photo-frame">
+          <!-- Foto real vía Unsplash (doctor profesional con bata blanca) -->
+          <img
+            src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=600&q=85&auto=format&fit=crop&crop=faces"
+            alt="Dr. Carlos Mendoza Ríos — Odontólogo en Miraflores, Lima"
+            loading="lazy"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+          />
+          <!-- Fallback si no carga la imagen -->
+          <div class="avatar-fallback" style="display:none" role="img" aria-label="Dr. Carlos Mendoza">CM</div>
+        </div>
+        <!-- Badge de experiencia -->
+        <div class="exp-badge" aria-label="10 años de experiencia">
+          <div class="exp-badge-num">10</div>
+          <div class="exp-badge-label">
+            <strong>Años de</strong>experiencia
+          </div>
+        </div>
+      </div>
+
+      <!-- Contenido -->
+      <div class="about-content fade-in-up" style="transition-delay:0.18s">
+        <span class="section-label">Nuestro especialista</span>
+        <h2>Dr. Carlos Mendoza Ríos</h2>
+        <p>
+          Con más de 10 años dedicado a la salud bucal, el Dr. Carlos Mendoza
+          combina experiencia clínica con tecnología de vanguardia para ofrecerte
+          tratamientos seguros, efectivos y completamente personalizados.
+          Su filosofía es simple: cada paciente merece una sonrisa que le cambie
+          la vida, con el cuidado y la atención que se merece.
+        </p>
+        <ul class="about-list">
+          <li>
+            <span class="check-icon">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0A2540" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            </span>
+            Egresado de la Universidad Peruana Cayetano Heredia (UPCH)
+          </li>
+          <li>
+            <span class="check-icon">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0A2540" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            </span>
+            Miembro activo del Colegio Odontológico del Perú (COP)
+          </li>
+          <li>
+            <span class="check-icon">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0A2540" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            </span>
+            Especialización en Estética Dental y Rehabilitación Oral
+          </li>
+          <li>
+            <span class="check-icon">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0A2540" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            </span>
+            Más de 500 pacientes atendidos con resultados documentados
+          </li>
+        </ul>
+        <a href="https://wa.me/51999888777?text=Hola,%20quiero%20agendar%20una%20consulta%20con%20el%20Dr.%20Mendoza" target="_blank" rel="noopener" class="btn btn-navy">
+          Agenda una consulta
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================
+     SECCIÓN: SERVICIOS
+================================================ -->
+<section class="services" id="servicios">
+  <div class="container">
+    <div class="text-center">
+      <span class="section-label fade-in-up">Lo que ofrecemos</span>
+    </div>
+    <h2 class="section-title fade-in-up" style="transition-delay:0.08s">Nuestros <span class="text-gold">servicios</span></h2>
+    <div class="gold-divider fade-in-up" style="transition-delay:0.14s"></div>
+    <p class="section-sub fade-in-up" style="transition-delay:0.18s">Todo lo que necesita tu salud bucal, en un solo lugar</p>
+
+    <div class="services-grid">
+
+      <!-- 1. Limpieza dental -->
+      <div class="service-card fade-in-up">
+        <img
+          class="service-img"
+          src="dentista-procedimiento-2.png"
+          alt="Limpieza dental profesional — dentista atendiendo paciente"
+          loading="lazy"
+          onerror="this.style.display='none'"
+        />
+        <div class="service-body">
+          <div class="service-icon-wrap" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C9 2 7 4 7 7c0 2 1 4 2 6l1 9h4l1-9c1-2 2-4 2-6 0-3-2-5-5-5z"/></svg>
+          </div>
+          <h3>Limpieza dental profesional</h3>
+          <p>Eliminamos sarro y manchas con ultrasonido. Recomendada cada 6 meses.</p>
+          <span class="service-tag">Prevención</span>
+        </div>
+      </div>
+
+      <!-- 2. Blanqueamiento -->
+      <div class="service-card fade-in-up" style="transition-delay:0.06s">
+        <img
+          class="service-img"
+          src="blanqueamiento-dental.jpg"
+          alt="Dientes blancos perfectos — resultado blanqueamiento LED"
+          loading="lazy"
+          onerror="this.style.display='none'"
+        />
+        <div class="service-body">
+          <div class="service-icon-wrap" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="2" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          </div>
+          <h3>Blanqueamiento dental</h3>
+          <p>Recupera el blanco natural de tus dientes en una sola sesión con tecnología LED.</p>
+          <span class="service-tag">Estética</span>
+        </div>
+      </div>
+
+      <!-- 3. Ortodoncia -->
+      <div class="service-card fade-in-up" style="transition-delay:0.12s">
+        <img
+          class="service-img"
+          src="brakets.jpg"
+          alt="Ortodoncia con brackets — corrección dental profesional"
+          loading="lazy"
+          onerror="this.style.display='none'"
+        />
+        <div class="service-body">
+          <div class="service-icon-wrap" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="9" width="18" height="6" rx="3"/><circle cx="8" cy="12" r="1.5" fill="#C9A84C"/><circle cx="12" cy="12" r="1.5" fill="#C9A84C"/><circle cx="16" cy="12" r="1.5" fill="#C9A84C"/></svg>
+          </div>
+          <h3>Ortodoncia con brackets</h3>
+          <p>Corrige la posición de tus dientes con brackets metálicos o estéticos de alta calidad.</p>
+          <span class="service-tag">Corrección</span>
+        </div>
+      </div>
+
+      <!-- 4. Carillas -->
+      <div class="service-card fade-in-up" style="transition-delay:0.18s">
+        <img
+          class="service-img"
+          src="annabeauty-model-woman-8383927.jpg"
+          alt="Carillas de porcelana — sonrisa perfecta natural"
+          loading="lazy"
+          onerror="this.style.display='none'"
+        />
+        <div class="service-body">
+          <div class="service-icon-wrap" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2 6h6l-5 4 2 6-5-4-5 4 2-6-5-4h6z"/></svg>
+          </div>
+          <h3>Carillas de porcelana</h3>
+          <p>Transforma tu sonrisa con carillas ultrafinas que imitan la textura natural del esmalte.</p>
+          <span class="service-tag">Premium</span>
+        </div>
+      </div>
+
+      <!-- 5. Implantes -->
+      <div class="service-card fade-in-up" style="transition-delay:0.24s">
+        <img
+          class="service-img"
+          src="implante.jpg"
+          alt="Implantes dentales de titanio — solución permanente"
+          loading="lazy"
+          onerror="this.style.display='none'"
+        />
+        <div class="service-body">
+          <div class="service-icon-wrap" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="2" x2="12" y2="14"/><path d="M8 6h8M9 9h6M10 12h4"/><path d="M9 14c0 0-2 2-2 5h10c0-3-2-5-2-5"/></svg>
+          </div>
+          <h3>Implantes dentales</h3>
+          <p>La solución definitiva para dientes perdidos. Titanio biocompatible de primera línea.</p>
+          <span class="service-tag">Cirugía</span>
+        </div>
+      </div>
+
+      <!-- 6. Endodoncia -->
+      <div class="service-card fade-in-up" style="transition-delay:0.30s">
+        <img
+          class="service-img"
+          src="dentista-procedimiento-1.png"
+          alt="Tratamiento de conductos — dentista especializada con paciente"
+          loading="lazy"
+          onerror="this.style.display='none'"
+        />
+        <div class="service-body">
+          <div class="service-icon-wrap" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C9 2 7 4 7 7c0 2 1 4 2 6l1 9h4l1-9c1-2 2-4 2-6 0-3-2-5-5-5z"/><line x1="10" y1="10" x2="14" y2="10"/></svg>
+          </div>
+          <h3>Tratamiento de conductos</h3>
+          <p>Salvamos tu diente natural eliminando la infección sin dolor, con anestesia efectiva.</p>
+          <span class="service-tag">Endodoncia</span>
+        </div>
+      </div>
+
+      <!-- 7. Resinas -->
+      <div class="service-card fade-in-up" style="transition-delay:0.36s">
+        <img
+          class="service-img"
+          src="curaciones-resina.jpg"
+          alt="Resinas dentales — restauración del color natural del diente"
+          loading="lazy"
+          onerror="this.style.display='none'"
+        />
+        <div class="service-body">
+          <div class="service-icon-wrap" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+          </div>
+          <h3>Resinas y restauraciones</h3>
+          <p>Reconstruimos la forma de tus dientes con resinas del color exacto a tu esmalte.</p>
+          <span class="service-tag">Restauración</span>
+        </div>
+      </div>
+
+      <!-- 8. Urgencias -->
+      <div class="service-card fade-in-up" style="transition-delay:0.42s">
+        <img
+          class="service-img"
+          src="urgencias-dentales.jpg"
+          alt="Urgencias odontológicas — atención inmediata el mismo día"
+          loading="lazy"
+          onerror="this.style.display='none'"
+        />
+        <div class="service-body">
+          <div class="service-icon-wrap" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.21 2.18 2 2 0 012.18 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.18 6.18l1.27-1.52a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+          </div>
+          <h3>Urgencias odontológicas</h3>
+          <p>Atención el mismo día para dolores agudos, fracturas o infecciones. Llámanos.</p>
+          <span class="service-tag">Urgente</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================
+     SECCIÓN: ¿POR QUÉ ELEGIRNOS?
+================================================ -->
+<section class="why" id="por-que">
+  <div class="container">
+    <div class="text-center">
+      <div class="gold-divider fade-in-up"></div>
+    </div>
+    <h2 class="section-title fade-in-up" style="color:var(--white);transition-delay:0.08s">¿Por qué elegirnos?</h2>
+    <p class="section-sub fade-in-up" style="transition-delay:0.14s;color:rgba(255,255,255,0.6)">Lo que nos hace distintos en Miraflores</p>
+
+    <div class="why-grid">
+      <div class="why-card fade-in-up" style="transition-delay:0.06s">
+        <div class="why-icon" aria-hidden="true">🦷</div>
+        <h3>Tecnología de punta</h3>
+        <p>Equipos digitales de última generación para diagnósticos precisos y tratamientos menos invasivos.</p>
+      </div>
+      <div class="why-card fade-in-up" style="transition-delay:0.16s">
+        <div class="why-icon" aria-hidden="true">💙</div>
+        <h3>Atención sin dolor</h3>
+        <p>Usamos técnicas de anestesia avanzada y protocolos de mínima invasión para tu comodidad.</p>
+      </div>
+      <div class="why-card fade-in-up" style="transition-delay:0.26s">
+        <div class="why-icon" aria-hidden="true">⭐</div>
+        <h3>Resultados garantizados</h3>
+        <p>Más de 500 pacientes satisfechos avalan nuestro trabajo. Tu sonrisa es nuestra mejor carta.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================
+     SECCIÓN: CONTADORES ANIMADOS
+================================================ -->
+<section class="counters" id="stats" aria-label="Estadísticas del consultorio">
+  <div class="container">
+    <div class="counters-grid">
+      <div class="counter-item fade-in-up">
+        <div class="counter-number" data-target="500" data-suffix="+">0</div>
+        <div class="counter-label">Pacientes atendidos</div>
+      </div>
+      <div class="counter-item fade-in-up" style="transition-delay:0.1s">
+        <div class="counter-number" data-target="10" data-suffix="">0</div>
+        <div class="counter-label">Años de experiencia</div>
+      </div>
+      <div class="counter-item fade-in-up" style="transition-delay:0.2s">
+        <div class="counter-number" data-target="98" data-suffix="%">0</div>
+        <div class="counter-label">Índice de satisfacción</div>
+      </div>
+      <div class="counter-item fade-in-up" style="transition-delay:0.3s">
+        <div class="counter-number" data-target="8" data-suffix="">0</div>
+        <div class="counter-label">Especialidades disponibles</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================
+     SECCIÓN: TESTIMONIOS
+================================================ -->
+<section class="testimonials" id="testimonios">
+  <div class="container">
+    <div class="text-center">
+      <span class="section-label fade-in-up">Reseñas reales</span>
+    </div>
+    <h2 class="section-title fade-in-up" style="transition-delay:0.08s">Lo que dicen nuestros <span class="text-gold">pacientes</span></h2>
+    <div class="gold-divider fade-in-up" style="transition-delay:0.14s"></div>
+    <p class="section-sub fade-in-up" style="transition-delay:0.18s">Historias reales de sonrisas transformadas</p>
+
+    <div class="testimonials-grid">
+
+      <div class="testi-card fade-in-up" style="transition-delay:0.06s">
+        <div class="testi-quote" aria-hidden="true">"</div>
+        <div class="stars" aria-label="5 estrellas">★★★★★</div>
+        <p class="testi-text">
+          ¡Quedé impresionada! En una sola sesión mis dientes cambiaron completamente.
+          El Dr. Mendoza es muy profesional y me explicó todo el proceso.
+          ¡Totalmente recomendado!
+        </p>
+        <div class="testi-header">
+          <div class="testi-avatar" style="background:linear-gradient(135deg,#0A2540,#1a4a7a)" aria-label="Avatar de María L.">ML</div>
+          <div class="testi-info">
+            <strong>María L.</strong>
+            <span class="testi-service">Blanqueamiento dental</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card fade-in-up" style="transition-delay:0.16s">
+        <div class="testi-quote" aria-hidden="true">"</div>
+        <div class="stars" aria-label="5 estrellas">★★★★★</div>
+        <p class="testi-text">
+          Tenía mucho miedo pero el proceso fue sin dolor. Hoy tengo mi diente nuevo y
+          nadie nota la diferencia. Gracias al Dr. Carlos por su paciencia y profesionalismo.
+        </p>
+        <div class="testi-header">
+          <div class="testi-avatar" style="background:linear-gradient(135deg,#C9A84C,#E8C96A)" aria-label="Avatar de Jorge R.">JR</div>
+          <div class="testi-info">
+            <strong>Jorge R.</strong>
+            <span class="testi-service">Implante dental</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card fade-in-up" style="transition-delay:0.26s">
+        <div class="testi-quote" aria-hidden="true">"</div>
+        <div class="stars" aria-label="5 estrellas">★★★★★</div>
+        <p class="testi-text">
+          Llevo 8 meses con el tratamiento y los resultados son increíbles. El consultorio
+          es moderno, limpio y el equipo es muy amable. ¡Mi hija también viene aquí ahora!
+        </p>
+        <div class="testi-header">
+          <div class="testi-avatar" style="background:linear-gradient(135deg,#133357,#0A2540)" aria-label="Avatar de Sandra P.">SP</div>
+          <div class="testi-info">
+            <strong>Sandra P.</strong>
+            <span class="testi-service">Ortodoncia</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================
+     SECCIÓN: UBICACIÓN Y CONTACTO
+================================================ -->
+<section class="contact" id="contacto">
+  <div class="container">
+    <div class="text-center">
+      <span class="section-label fade-in-up">Encuéntranos</span>
+    </div>
+    <h2 class="section-title fade-in-up" style="transition-delay:0.08s">Visítanos en <span class="text-gold">Miraflores</span></h2>
+    <div class="gold-divider fade-in-up" style="transition-delay:0.14s"></div>
+    <p class="section-sub fade-in-up" style="transition-delay:0.18s">Estamos listos para atenderte de lunes a sábado</p>
+
+    <div class="contact-grid">
+      <div class="contact-info fade-in-up" style="transition-delay:0.08s">
+        <h2>¿Dónde estamos?</h2>
+
+        <div class="contact-item">
+          <div class="contact-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div class="contact-item-body">
+            <strong>Dirección</strong>
+            <span>Av. Los Cedros 245, Consultorio 3B<br/>Miraflores, Lima — Perú</span>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#C9A84C" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </div>
+          <div class="contact-item-body">
+            <strong>WhatsApp</strong>
+            <span>+51 999 888 777</span>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div class="contact-item-body">
+            <strong>Horario de atención</strong>
+            <span>Lunes a Viernes: 9:00 am – 7:00 pm<br/>Sábados: 9:00 am – 1:00 pm</span>
+          </div>
+        </div>
+
+        <a href="https://wa.me/51999888777?text=Hola,%20quiero%20agendar%20una%20cita" target="_blank" rel="noopener" class="btn btn-wa" style="margin-top:28px">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Escríbenos ahora
+        </a>
+      </div>
+
+      <div class="contact-map fade-in-up" style="transition-delay:0.22s">
+        <iframe
+          src="https://www.google.com/maps?q=-12.1168,-77.0278&output=embed"
+          title="Ubicación de Sonrisa Perfecta en Miraflores, Lima"
+          loading="lazy"
+          allowfullscreen>
+        </iframe>
+        <p class="map-label">📍 Av. Los Cedros 245, Consultorio 3B · Miraflores, Lima</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================
+     FOOTER
+================================================ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+
+      <!-- Col 1: Marca -->
+      <div>
+        <div class="footer-brand-logo">
+          <svg width="26" height="26" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <ellipse cx="30" cy="20" rx="18" ry="16" fill="#C9A84C"/>
+            <ellipse cx="22" cy="38" rx="10" ry="14" fill="#E8C96A" opacity="0.8"/>
+            <ellipse cx="38" cy="38" rx="10" ry="14" fill="#E8C96A" opacity="0.8"/>
+          </svg>
+          Sonrisa <span>Perfecta</span>
+        </div>
+        <p class="footer-slogan">
+          Tu sonrisa, nuestro compromiso.<br/>
+          Odontología integral con tecnología<br/>
+          moderna y el trato humano que mereces.
+        </p>
+      </div>
+
+      <!-- Col 2: Links -->
+      <div class="footer-col">
+        <h4>Navegación</h4>
+        <ul class="footer-links">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#nosotros">Nosotros</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+          <li><a href="https://wa.me/51999888777?text=Hola,%20quiero%20agendar%20una%20cita" target="_blank" rel="noopener">Agendar cita</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Redes -->
+      <div class="footer-col">
+        <h4>Síguenos</h4>
+        <div class="social-links">
+          <a href="#" class="social-link" aria-label="Instagram @sonrisaperfectalima" title="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="white"/></svg>
+          </a>
+          <a href="#" class="social-link" aria-label="Facebook Sonrisa Perfecta Lima" title="Facebook">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+          <a href="https://wa.me/51999888777?text=Hola,%20quiero%20agendar%20una%20cita" target="_blank" rel="noopener" class="social-link" aria-label="WhatsApp" title="WhatsApp" style="background:#25D366;border-color:#25D366">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </a>
+        </div>
+        <p style="font-size:0.8rem;color:rgba(255,255,255,0.4);margin-top:18px;line-height:1.7">
+          📸 @sonrisaperfectalima<br/>
+          📘 Sonrisa Perfecta Lima
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+  <hr class="footer-divider" />
+
+  <div class="container">
+    <div class="footer-bottom">
+      <p class="footer-copyright">© 2025 Sonrisa Perfecta — Odontología Integral. Todos los derechos reservados.</p>
+      <p class="footer-credit">
+        Diseñado por <strong style="color:rgba(201,168,76,0.55)">The Creator Pro</strong> · ¿Quieres la tuya? Escríbenos →
+        <a href="https://wa.me/51966004850?text=Hola,%20vi%20su%20trabajo%20y%20quiero%20una%20página%20web%20para%20mi%20negocio" target="_blank" rel="noopener">wa.me/+51 966004850</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ================================================
+     BOTÓN FLOTANTE WHATSAPP
+================================================ -->
+<a href="https://wa.me/51999888777?text=Hola,%20quiero%20agendar%20una%20cita" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Contactar por WhatsApp">
+  <span class="wa-tooltip">¡Escríbenos por WhatsApp!</span>
+  <svg width="32" height="32" viewBox="0 0 24 24" fill="white" aria-hidden="true">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+
+
+<!-- ================================================
+     JAVASCRIPT — VANILLA
+================================================ -->
+<script>
+  /* --- Navbar scroll --- */
+  const navbar     = document.getElementById('navbar');
+  const hamburger  = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 50);
+  }, { passive: true });
+
+  hamburger.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('open');
+    hamburger.classList.toggle('open', isOpen);
+    hamburger.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  function closeMobileMenu() {
+    mobileMenu.classList.remove('open');
+    hamburger.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+  }
+
+  /* --- Fade-in Intersection Observer --- */
+  const fadeEls = document.querySelectorAll('.fade-in-up');
+  fadeEls.forEach(el => {
+    if (!el.closest('.hero')) el.classList.remove('visible');
+  });
+
+  const fadeObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        fadeObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -36px 0px' });
+
+  fadeEls.forEach(el => {
+    if (!el.closest('.hero')) fadeObserver.observe(el);
+  });
+
+  /* --- Contadores animados --- */
+  function animateCounter(el) {
+    const target   = parseInt(el.getAttribute('data-target'), 10);
+    const suffix   = el.getAttribute('data-suffix') || '';
+    const duration = 1800;
+    const start    = performance.now();
+    function update(now) {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased    = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.round(eased * target) + suffix;
+      if (progress < 1) requestAnimationFrame(update);
+    }
+    requestAnimationFrame(update);
+  }
+
+  const counterEls = document.querySelectorAll('.counter-number');
+  let countersStarted = false;
+
+  new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !countersStarted) {
+        countersStarted = true;
+        counterEls.forEach(animateCounter);
+      }
+    });
+  }, { threshold: 0.4 }).observe(document.getElementById('stats'));
+</script>
+
+</body>
+</html>

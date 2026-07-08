@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Serenity Spa — Centro de bienestar y relajación en Miraflores, Lima. Masajes, tratamientos faciales y rituales de bienestar. Reserva online."/>
+  <title>Serenity Spa — Centro de Bienestar | Miraflores, Lima</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --sage:    #5E7A6A;
+      --sage-l:  #7A9A87;
+      --sage-d:  #3D5548;
+      --stone:   #8A7A6A;
+      --cream:   #F7F3EE;
+      --cream2:  #EDE6DB;
+      --sand:    #D4C4A8;
+      --dark:    #1A1410;
+      --text:    #2A2018;
+      --textg:   #6A5A4A;
+      --white:   #FFFFFF;
+      --wa:      #25D366;
+      --radius:  16px;
+      --shadow:  0 4px 28px rgba(26,20,16,0.10);
+      --shadow-md: 0 12px 48px rgba(26,20,16,0.16);
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--white); line-height: 1.65; overflow-x: hidden; }
+    h1,h2,h3,h4 { font-family: 'Cormorant Garamond', serif; line-height: 1.2; }
+    a { text-decoration: none; color: inherit; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 28px; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; border-radius: 50px; font-family: 'Inter', sans-serif; font-weight: 600; font-size: 0.88rem; cursor: pointer; transition: all 0.25s; border: none; }
+    .btn-sage { background: var(--sage); color: var(--white); box-shadow: 0 4px 18px rgba(94,122,106,0.35); }
+    .btn-sage:hover { background: var(--sage-l); transform: translateY(-2px); }
+    .btn-outline { background: transparent; color: var(--white); border: 1.5px solid rgba(255,255,255,0.4); }
+    .btn-outline:hover { border-color: var(--sand); color: var(--sand); }
+    .btn-wa { background: var(--wa); color: var(--white); }
+    .btn-wa:hover { background: #20c55a; transform: translateY(-2px); }
+    .sec-label { display: inline-block; background: rgba(94,122,106,0.1); border: 1px solid rgba(94,122,106,0.3); color: var(--sage); font-size: 0.67rem; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; padding: 4px 14px; border-radius: 50px; margin-bottom: 14px; }
+    .sec-title { font-size: clamp(1.8rem, 4vw, 2.6rem); text-align: center; margin-bottom: 10px; }
+    .sec-sub { text-align: center; color: var(--textg); font-size: 0.95rem; max-width: 440px; margin: 0 auto 52px; line-height: 1.85; }
+    .fade-in { opacity: 0; transform: translateY(22px); transition: opacity 0.65s ease, transform 0.65s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    /* NAVBAR */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(247,243,238,0.96); backdrop-filter: blur(20px); border-bottom: 1px solid var(--cream2); transition: box-shadow 0.3s; }
+    nav.scrolled { box-shadow: 0 2px 24px rgba(26,20,16,0.08); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+    .logo { font-family: 'Cormorant Garamond', serif; font-size: 1.45rem; font-weight: 700; color: var(--sage-d); letter-spacing: 1px; }
+    .logo span { color: var(--stone); font-weight: 400; font-style: italic; }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a { font-size: 0.83rem; font-weight: 500; color: var(--textg); letter-spacing: 0.5px; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--sage); }
+    .nav-cta { background: var(--sage); color: white; padding: 9px 20px; border-radius: 50px; font-size: 0.82rem; font-weight: 600; transition: all 0.2s; }
+    .nav-cta:hover { background: var(--sage-l); transform: translateY(-1px); }
+    @media (max-width: 768px) { .nav-links { display: none; } }
+
+    /* HERO */
+    .hero { color: var(--white); padding: 130px 0 100px; min-height: 92vh; display: flex; align-items: center; position: relative; overflow: hidden; }
+    .hero-bg { position: absolute; inset: 0; background-image: url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=1600&q=80'); background-size: cover; background-position: center; }
+    .hero-pattern { position: absolute; inset: 0; background-image: radial-gradient(circle at 20% 50%, rgba(94,122,106,0.25) 0%, transparent 50%), linear-gradient(160deg, rgba(26,20,16,0.92) 0%, rgba(46,35,24,0.85) 100%); }
+    .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; position: relative; z-index: 1; }
+    .hero-tag { display: inline-block; background: rgba(94,122,106,0.2); border: 1px solid rgba(94,122,106,0.4); color: #9DC4AE; font-size: 0.68rem; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; padding: 5px 16px; border-radius: 50px; margin-bottom: 22px; }
+    .hero h1 { font-size: clamp(2.4rem, 5vw, 3.8rem); margin-bottom: 18px; color: var(--white); }
+    .hero h1 em { font-style: italic; color: var(--sand); }
+    .hero p { font-size: 1rem; color: rgba(255,255,255,0.68); max-width: 420px; margin-bottom: 36px; line-height: 1.9; }
+    .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+    .hero-stats { display: flex; gap: 32px; margin-top: 48px; padding-top: 36px; border-top: 1px solid rgba(255,255,255,0.1); }
+    .stat-item { text-align: center; }
+    .stat-num { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 700; color: var(--sand); }
+    .stat-label { font-size: 0.75rem; color: rgba(255,255,255,0.5); letter-spacing: 1px; text-transform: uppercase; }
+    .hero-visual { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .hero-img { border-radius: 16px; overflow: hidden; }
+    .hero-img-main { grid-column: 1 / -1; height: 200px; }
+    .hero-img-main img, .hero-img-sm img { width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 16px; }
+    .hero-img-sm { height: 130px; }
+    @media (max-width: 768px) { .hero-grid { grid-template-columns: 1fr; } .hero-visual { display: none; } .hero { min-height: auto; padding: 110px 0 70px; } }
+
+    /* SERVICIOS */
+    .servicios { padding: 96px 0; background: var(--cream); }
+    .servicios-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .serv-card { background: var(--white); border-radius: 20px; overflow: hidden; box-shadow: var(--shadow); transition: transform 0.3s, box-shadow 0.3s; }
+    .serv-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
+    .serv-top { height: 160px; overflow: hidden; }
+    .serv-top img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s; }
+    .serv-card:hover .serv-top img { transform: scale(1.05); }
+    .serv-body { padding: 24px; }
+    .serv-body h3 { font-size: 1.15rem; margin-bottom: 8px; color: var(--text); }
+    .serv-body p { font-size: 0.85rem; color: var(--textg); line-height: 1.75; margin-bottom: 14px; }
+    .serv-precio { font-size: 0.82rem; font-weight: 700; color: var(--sage); }
+    @media (max-width: 900px) { .servicios-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 580px) { .servicios-grid { grid-template-columns: 1fr; } }
+
+    /* EXPERIENCIA / NOSOTROS */
+    .nosotros { padding: 96px 0; background: var(--white); }
+    .nosotros-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+    .nosotros-imgs { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .nos-img { border-radius: 14px; overflow: hidden; }
+    .nos-img-1 { height: 240px; overflow: hidden; }
+    .nos-img-2 { height: 240px; grid-row: span 2; overflow: hidden; }
+    .nos-img-3 { height: 160px; overflow: hidden; }
+    .nos-img img { width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 14px; }
+    .nosotros-text .sec-label { display: block; }
+    .nosotros-text h2 { font-size: clamp(1.8rem, 3.5vw, 2.5rem); margin-bottom: 16px; }
+    .nosotros-text p { color: var(--textg); font-size: 0.95rem; line-height: 1.9; margin-bottom: 28px; }
+    .nos-items { display: flex; flex-direction: column; gap: 16px; margin-bottom: 32px; }
+    .nos-item { display: flex; gap: 14px; align-items: flex-start; }
+    .nos-ic { width: 40px; height: 40px; background: var(--cream); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0; }
+    .nos-info h4 { font-size: 0.92rem; font-weight: 600; font-family: 'Inter', sans-serif; margin-bottom: 2px; }
+    .nos-info p { font-size: 0.83rem; color: var(--textg); margin: 0; }
+    @media (max-width: 768px) { .nosotros-inner { grid-template-columns: 1fr; } .nosotros-imgs { order: -1; } }
+
+    /* TESTIMONIOS */
+    .testi { padding: 96px 0; background: var(--cream); }
+    .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .testi-card { background: var(--white); border-radius: 18px; padding: 32px 28px; box-shadow: var(--shadow); }
+    .testi-stars { color: #F4B942; font-size: 0.9rem; margin-bottom: 14px; letter-spacing: 2px; }
+    .testi-card p { font-size: 0.92rem; color: var(--textg); line-height: 1.85; font-style: italic; margin-bottom: 20px; }
+    .testi-autor { display: flex; align-items: center; gap: 12px; }
+    .testi-avatar { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--sage), var(--sage-d)); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 0.85rem; font-family: 'Inter', sans-serif; }
+    .testi-nombre { font-size: 0.88rem; font-weight: 600; }
+    .testi-ref { font-size: 0.78rem; color: var(--textg); }
+    @media (max-width: 900px) { .testi-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 580px) { .testi-grid { grid-template-columns: 1fr; } }
+
+    /* BLOG */
+    .blog { padding: 96px 0; background: var(--white); }
+    .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+    .blog-card { border-radius: 18px; overflow: hidden; box-shadow: var(--shadow); transition: transform 0.3s; cursor: pointer; }
+    .blog-card:hover { transform: translateY(-5px); }
+    .blog-img { height: 180px; overflow: hidden; }
+    .blog-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s; }
+    .blog-card:hover .blog-img img { transform: scale(1.05); }
+    .blog-body { padding: 24px; }
+    .blog-cat { font-size: 0.67rem; font-weight: 700; color: var(--sage); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; }
+    .blog-body h3 { font-size: 1.05rem; margin-bottom: 8px; line-height: 1.4; }
+    .blog-body p { font-size: 0.83rem; color: var(--textg); line-height: 1.75; margin-bottom: 14px; }
+    .blog-meta { display: flex; align-items: center; justify-content: space-between; font-size: 0.76rem; color: var(--textg); }
+    .read-more { color: var(--sage); font-weight: 600; }
+    @media (max-width: 900px) { .blog-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 580px) { .blog-grid { grid-template-columns: 1fr; } }
+
+    /* RESERVA CTA */
+    .cta { padding: 96px 0; background: linear-gradient(135deg, #1A1410 0%, #2E2318 100%); color: var(--white); text-align: center; position: relative; overflow: hidden; }
+    .cta::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 50% 50%, rgba(94,122,106,0.2) 0%, transparent 70%); }
+    .cta-inner { position: relative; z-index: 1; max-width: 580px; margin: 0 auto; }
+    .cta h2 { font-size: clamp(2rem, 4.5vw, 3rem); margin-bottom: 16px; }
+    .cta h2 em { color: var(--sand); }
+    .cta p { color: rgba(255,255,255,0.65); font-size: 0.97rem; line-height: 1.85; margin-bottom: 36px; }
+    .cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .cta-horario { margin-top: 28px; font-size: 0.83rem; color: rgba(255,255,255,0.4); }
+
+    /* FOOTER */
+    footer { background: var(--dark); color: rgba(255,255,255,0.55); padding: 48px 0 28px; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+    .footer-brand .logo { font-size: 1.3rem; display: block; margin-bottom: 12px; }
+    .footer-brand p { font-size: 0.83rem; line-height: 1.8; max-width: 260px; }
+    .footer-col h4 { font-family: 'Inter', sans-serif; font-size: 0.78rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.8); margin-bottom: 16px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .footer-col ul li a { font-size: 0.83rem; color: rgba(255,255,255,0.5); transition: color 0.2s; }
+    .footer-col ul li a:hover { color: var(--sand); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 24px; text-align: center; font-size: 0.78rem; }
+    .footer-bottom a { color: #9DC4AE; }
+    @media (max-width: 768px) { .footer-grid { grid-template-columns: 1fr; } }
+
+    /* WA FLOTANTE */
+    .wa-float { position: fixed; bottom: 28px; right: 28px; z-index: 999; background: var(--wa); color: white; width: 58px; height: 58px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; box-shadow: 0 6px 28px rgba(37,211,102,0.5); transition: transform 0.25s; text-decoration: none; }
+    .wa-float:hover { transform: scale(1.1); }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <div class="container nav-inner">
+    <div class="logo">Serenity <span>Spa</span></div>
+    <ul class="nav-links">
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#nosotros">Nosotros</a></li>
+      <li><a href="#testimonios">Testimonios</a></li>
+      <li><a href="#blog">Blog</a></li>
+      <li><a href="#reserva">Contacto</a></li>
+    </ul>
+    <a href="https://wa.me/51999888777" class="nav-cta">Reservar cita</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-pattern"></div>
+  <div class="container hero-grid">
+    <div class="fade-in">
+      <div class="hero-tag">✦ Centro de bienestar en Miraflores</div>
+      <h1>Encuentra tu<br><em>equilibrio</em><br>interior</h1>
+      <p>Masajes terapéuticos, tratamientos faciales y rituales de bienestar diseñados para restaurar tu energía y paz mental.</p>
+      <div class="hero-btns">
+        <a href="https://wa.me/51999888777?text=Hola,%20quisiera%20reservar%20un%20tratamiento" class="btn btn-wa">💬 Reservar ahora</a>
+        <a href="#servicios" class="btn btn-outline">Ver tratamientos</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-num">+800</div>
+          <div class="stat-label">Clientes</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">12</div>
+          <div class="stat-label">Años</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">4.9★</div>
+          <div class="stat-label">Google</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual fade-in">
+      <div class="hero-img hero-img-main"><img src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=800&q=80" alt="Spa masaje"/></div>
+      <div class="hero-img hero-img-sm"><img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=400&q=80" alt="Facial"/></div>
+      <div class="hero-img hero-img-sm"><img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=400&q=80" alt="Aromaterapia"/></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section class="servicios" id="servicios">
+  <div class="container">
+    <div style="text-align:center" class="fade-in">
+      <div class="sec-label">Nuestros tratamientos</div>
+      <h2 class="sec-title">Una experiencia para cada necesidad</h2>
+      <p class="sec-sub">Todos nuestros tratamientos son realizados por especialistas certificados con productos naturales de alta calidad</p>
+    </div>
+    <div class="servicios-grid">
+      <div class="serv-card fade-in">
+        <div class="serv-top"><img src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=600&q=80" alt="Masaje terapéutico"/></div>
+        <div class="serv-body">
+          <h3>Masaje terapéutico</h3>
+          <p>Alivia tensiones musculares, estrés y mejora la circulación. Técnicas suecas y de tejido profundo.</p>
+          <div class="serv-precio">Desde S/120 · 60 min</div>
+        </div>
+      </div>
+      <div class="serv-card fade-in">
+        <div class="serv-top"><img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=600&q=80" alt="Facial rejuvenecedor"/></div>
+        <div class="serv-body">
+          <h3>Facial rejuvenecedor</h3>
+          <p>Limpieza profunda, hidratación y tratamiento antiedad con tecnología de radiofrecuencia.</p>
+          <div class="serv-precio">Desde S/150 · 75 min</div>
+        </div>
+      </div>
+      <div class="serv-card fade-in">
+        <div class="serv-top"><img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=600&q=80" alt="Ritual de cuerpo"/></div>
+        <div class="serv-body">
+          <h3>Ritual de cuerpo completo</h3>
+          <p>Exfoliación, envoltura corporal y masaje de relajación. Una experiencia de spa completa.</p>
+          <div class="serv-precio">Desde S/220 · 2 horas</div>
+        </div>
+      </div>
+      <div class="serv-card fade-in">
+        <div class="serv-top"><img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&q=80" alt="Aromaterapia"/></div>
+        <div class="serv-body">
+          <h3>Aromaterapia</h3>
+          <p>Masaje con aceites esenciales puros para equilibrar mente, cuerpo y emociones.</p>
+          <div class="serv-precio">Desde S/100 · 60 min</div>
+        </div>
+      </div>
+      <div class="serv-card fade-in">
+        <div class="serv-top"><img src="https://images.unsplash.com/photo-1507652313519-d4e9174996dd?w=600&q=80" alt="Hidroterapia"/></div>
+        <div class="serv-body">
+          <h3>Hidroterapia</h3>
+          <p>Baño de inmersión con sales minerales del Mar Muerto y jets de agua a presión controlada.</p>
+          <div class="serv-precio">Desde S/90 · 45 min</div>
+        </div>
+      </div>
+      <div class="serv-card fade-in">
+        <div class="serv-top"><img src="https://images.unsplash.com/photo-1591343395082-e120087004b4?w=600&q=80" alt="Masaje de pareja"/></div>
+        <div class="serv-body">
+          <h3>Masaje de pareja</h3>
+          <p>Una experiencia compartida en cabina privada. Ideal para aniversarios y ocasiones especiales.</p>
+          <div class="serv-precio">Desde S/280 · 60 min c/u</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NOSOTROS -->
+<section class="nosotros" id="nosotros">
+  <div class="container nosotros-inner">
+    <div class="nosotros-imgs fade-in">
+      <div class="nos-img nos-img-1"><img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=600&q=80" alt="Spa interior"/></div>
+      <div class="nos-img nos-img-2"><img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80" alt="Masajista profesional"/></div>
+      <div class="nos-img nos-img-3"><img src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=600&q=80" alt="Productos spa"/></div>
+    </div>
+    <div class="nosotros-text fade-in">
+      <div class="sec-label">Nuestra historia</div>
+      <h2>12 años cultivando el bienestar en Lima</h2>
+      <p>Serenity Spa nació en 2012 con una misión clara: crear un refugio de paz en el corazón de Miraflores donde las personas puedan desconectarse del ritmo acelerado de la ciudad y reconectar con ellas mismas.</p>
+      <div class="nos-items">
+        <div class="nos-item">
+          <div class="nos-ic">🏆</div>
+          <div class="nos-info">
+            <h4>Premio al Mejor Spa de Lima 2023</h4>
+            <p>Reconocidos por la Asociación de Turismo de Lima</p>
+          </div>
+        </div>
+        <div class="nos-item">
+          <div class="nos-ic">👩‍⚕️</div>
+          <div class="nos-info">
+            <h4>Terapeutas certificadas internacionalmente</h4>
+            <p>Formadas en escuelas de Tailandia, Bali y España</p>
+          </div>
+        </div>
+        <div class="nos-item">
+          <div class="nos-ic">🌱</div>
+          <div class="nos-info">
+            <h4>Productos 100% naturales y orgánicos</h4>
+            <p>Sin parabenos ni químicos agresivos para tu piel</p>
+          </div>
+        </div>
+      </div>
+      <a href="#reserva" class="btn btn-sage">Conocer más →</a>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIOS -->
+<section class="testi" id="testimonios">
+  <div class="container">
+    <div style="text-align:center" class="fade-in">
+      <div class="sec-label">Lo que dicen nuestros clientes</div>
+      <h2 class="sec-title">Experiencias reales</h2>
+      <p class="sec-sub">Más de 800 clientes satisfechos nos respaldan en Google</p>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card fade-in">
+        <div class="testi-stars">★★★★★</div>
+        <p>"El mejor spa que he visitado en Lima. El masaje de tejido profundo fue exactamente lo que necesitaba después de semanas de estrés laboral. El ambiente es increíble."</p>
+        <div class="testi-autor">
+          <div class="testi-avatar">MC</div>
+          <div>
+            <div class="testi-nombre">María Claudia R.</div>
+            <div class="testi-ref">Reseña de Google · Miraflores</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card fade-in">
+        <div class="testi-stars">★★★★★</div>
+        <p>"Vine con mi esposo para nuestro aniversario y fue una experiencia mágica. El ritual de pareja es simplemente perfecto. Ya lo agendamos para el próximo año."</p>
+        <div class="testi-autor">
+          <div class="testi-avatar">LP</div>
+          <div>
+            <div class="testi-nombre">Luciana P.</div>
+            <div class="testi-ref">Reseña de Google · San Borja</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card fade-in">
+        <div class="testi-stars">★★★★★</div>
+        <p>"El facial rejuvenecedor transformó mi piel en una sola sesión. La terapeuta fue muy profesional y el resultado fue mejor de lo que esperaba. 100% recomendado."</p>
+        <div class="testi-autor">
+          <div class="testi-avatar">AG</div>
+          <div>
+            <div class="testi-nombre">Andrea G.</div>
+            <div class="testi-ref">Reseña de Google · Surco</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG -->
+<section class="blog" id="blog">
+  <div class="container">
+    <div style="text-align:center" class="fade-in">
+      <div class="sec-label">Nuestro blog</div>
+      <h2 class="sec-title">Consejos para tu bienestar</h2>
+      <p class="sec-sub">Artículos escritos por nuestros especialistas para ayudarte a vivir mejor</p>
+    </div>
+    <div class="blog-grid">
+      <div class="blog-card fade-in">
+        <div class="blog-img"><img src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=600&q=80" alt="Masaje terapéutico"/></div>
+        <div class="blog-body">
+          <div class="blog-cat">Masajes</div>
+          <h3>5 señales de que tu cuerpo necesita un masaje terapéutico</h3>
+          <p>El estrés crónico se acumula en el cuerpo de formas que muchas veces ignoramos. Aprende a reconocer las señales...</p>
+          <div class="blog-meta">
+            <span>12 jun 2025 · 4 min</span>
+            <span class="read-more">Leer más →</span>
+          </div>
+        </div>
+      </div>
+      <div class="blog-card fade-in">
+        <div class="blog-img"><img src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=600&q=80" alt="Skincare"/></div>
+        <div class="blog-body">
+          <div class="blog-cat">Skincare</div>
+          <h3>Rutina de cuidado facial para pieles mixtas en el clima de Lima</h3>
+          <p>La humedad y contaminación de Lima afectan especialmente a las pieles mixtas. Te explicamos cómo adaptar tu rutina...</p>
+          <div class="blog-meta">
+            <span>28 may 2025 · 5 min</span>
+            <span class="read-more">Leer más →</span>
+          </div>
+        </div>
+      </div>
+      <div class="blog-card fade-in">
+        <div class="blog-img"><img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&q=80" alt="Aromaterapia"/></div>
+        <div class="blog-body">
+          <div class="blog-cat">Bienestar</div>
+          <h3>Aromaterapia: qué aceites usar según tu estado emocional</h3>
+          <p>Cada aceite esencial tiene propiedades únicas que pueden ayudarte a manejar el estrés, la ansiedad o el insomnio...</p>
+          <div class="blog-meta">
+            <span>10 may 2025 · 6 min</span>
+            <span class="read-more">Leer más →</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA RESERVA -->
+<section class="cta" id="reserva">
+  <div class="container cta-inner fade-in">
+    <div class="sec-label" style="margin: 0 auto 14px;">Reserva tu tratamiento</div>
+    <h2>Regálate el descanso<br>que <em>mereces</em></h2>
+    <p>Escríbenos por WhatsApp y te ayudamos a elegir el tratamiento ideal según tus necesidades. Primera visita con 10% de descuento.</p>
+    <div class="cta-btns">
+      <a href="https://wa.me/51999888777?text=Hola,%20quisiera%20reservar%20un%20tratamiento%20en%20Serenity%20Spa" class="btn btn-wa">💬 Reservar por WhatsApp</a>
+      <a href="tel:+51999888777" class="btn btn-outline">📞 Llamar ahora</a>
+    </div>
+    <div class="cta-horario">📍 Av. La Mar 1050, Miraflores · Lunes a domingo 9am–8pm · 999 888 777</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo" style="color:#9DC4AE">Serenity <span style="color:var(--sand)">Spa</span></div>
+        <p>Centro de bienestar y relajación en el corazón de Miraflores. 12 años cuidando a Lima.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Servicios</h4>
+        <ul>
+          <li><a href="#">Masaje terapéutico</a></li>
+          <li><a href="#">Facial rejuvenecedor</a></li>
+          <li><a href="#">Ritual de cuerpo</a></li>
+          <li><a href="#">Aromaterapia</a></li>
+          <li><a href="#">Masaje de pareja</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Nosotros</h4>
+        <ul>
+          <li><a href="#">Nuestra historia</a></li>
+          <li><a href="#">Blog de bienestar</a></li>
+          <li><a href="#">Trabaja con nosotros</a></li>
+          <li><a href="#">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Serenity Spa · Miraflores, Lima &nbsp;|&nbsp; Web diseñada por <a href="https://altaweb.pe">Alta Web · altaweb.pe</a></p>
+    </div>
+  </div>
+</footer>
+
+<!-- WA FLOTANTE -->
+<a href="https://wa.me/51999888777" class="wa-float" title="Reservar cita">💬</a>
+
+<script>
+  const obs = new IntersectionObserver(en => {
+    en.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
+  document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+
+  const nav = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  });
+</script>
+</body>
+</html>

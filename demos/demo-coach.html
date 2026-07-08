@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Ana Sofía Reyes — Coach Transformacional certificada en Lima. Programas de vida, liderazgo y propósito. Primera sesión gratis."/>
+  <title>Ana Sofía Reyes — Coach Transformacional | Lima, Perú</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --indigo:   #1E0A4C;
+      --indigo2:  #280D62;
+      --purple:   #3D1585;
+      --violet:   #6B21A8;
+      --coral:    #F4607A;
+      --coral-l:  #F97D93;
+      --coral-d:  #D9455F;
+      --champ:    #F5E6C8;
+      --champ2:   #EDD9A3;
+      --rose:     #FDF0F3;
+      --white:    #FFFFFF;
+      --gray:     rgba(255,255,255,0.6);
+      --gray-d:   rgba(255,255,255,0.3);
+      --border:   rgba(244,96,122,0.2);
+      --border-v: rgba(107,33,168,0.25);
+      --text:     #1A0A35;
+      --textg:    #5A4575;
+      --wa:       #25D366;
+      --radius:   20px;
+      --shadow:   0 4px 28px rgba(30,10,76,0.12);
+      --shadow-md: 0 14px 48px rgba(30,10,76,0.2);
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--white); line-height: 1.65; overflow-x: hidden; }
+    h1,h2,h3 { font-family: 'DM Serif Display', serif; line-height: 1.15; }
+    a { text-decoration: none; color: inherit; }
+    section { padding: 96px 0; }
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 28px; }
+    .label { display: inline-block; background: rgba(244,96,122,0.08); border: 1px solid rgba(244,96,122,0.3); color: var(--coral); font-size: 0.68rem; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; padding: 5px 14px; border-radius: 50px; margin-bottom: 14px; font-family: 'Inter', sans-serif; }
+    .sec-title { font-size: clamp(1.8rem,4vw,2.6rem); margin-bottom: 12px; text-align: center; color: var(--text); }
+    .sec-sub { text-align: center; color: var(--textg); font-size: 0.97rem; max-width: 480px; margin: 0 auto 52px; line-height: 1.8; }
+    .coral-line { width: 40px; height: 3px; background: linear-gradient(90deg,var(--coral),var(--champ2)); border-radius: 3px; margin: 0 auto 16px; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 15px 30px; border-radius: 50px; font-family: 'Inter', sans-serif; font-weight: 600; font-size: 0.9rem; cursor: pointer; transition: all 0.25s; border: 1.5px solid transparent; }
+    .btn-coral { background: var(--coral); color: var(--white); box-shadow: 0 4px 20px rgba(244,96,122,0.35); }
+    .btn-coral:hover { background: var(--coral-l); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(244,96,122,0.45); }
+    .btn-outline { background: transparent; color: var(--white); border-color: rgba(255,255,255,0.4); }
+    .btn-outline:hover { border-color: var(--champ); color: var(--champ); }
+    .btn-outline-coral { background: transparent; color: var(--coral); border-color: var(--coral); }
+    .btn-outline-coral:hover { background: rgba(244,96,122,0.06); transform: translateY(-2px); }
+    .btn-wa { background: var(--wa); color: var(--white); }
+    .btn-wa:hover { background: #20c55a; transform: translateY(-2px); box-shadow: 0 6px 22px rgba(37,211,102,0.4); }
+    .fade-in-up { opacity: 0; transform: translateY(24px); transition: opacity 0.65s ease, transform 0.65s ease; }
+    .fade-in-up.visible { opacity: 1; transform: translateY(0); }
+
+    /* NAVBAR */
+    .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(30,10,76,0.95); backdrop-filter: blur(18px); border-bottom: 1px solid var(--border); }
+    .navbar.scrolled { box-shadow: 0 2px 32px rgba(30,10,76,0.4); }
+    .navbar-inner { display: flex; align-items: center; justify-content: space-between; height: 68px; max-width: 1120px; margin: 0 auto; padding: 0 28px; }
+    .nav-logo { font-family: 'DM Serif Display', serif; font-size: 1.15rem; color: var(--white); display: flex; align-items: center; gap: 10px; }
+    .nav-logo span { color: var(--coral); }
+    .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
+    .nav-links a { font-size: 0.85rem; font-weight: 500; color: var(--gray); transition: color 0.2s; }
+    .nav-links a:hover { color: var(--coral-l); }
+    .nav-cta { background: var(--coral) !important; color: var(--white) !important; padding: 9px 22px; border-radius: 50px; font-weight: 700 !important; font-size: 0.82rem !important; }
+    .nav-cta:hover { background: var(--coral-l) !important; transform: translateY(-1px); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--coral); border-radius: 2px; transition: all 0.3s; }
+    .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px,5px); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px,-5px); }
+    .mobile-menu { display: none; flex-direction: column; background: var(--indigo); border-top: 1px solid var(--border); padding: 12px 28px 22px; gap: 2px; }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { padding: 12px 0; font-size: 0.95rem; color: var(--gray); border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .mobile-menu a:hover { color: var(--coral-l); }
+    @media (max-width: 768px) { .nav-links { display: none; } .hamburger { display: flex; } }
+
+    /* HERO */
+    .hero { min-height: 100vh; background: linear-gradient(135deg, var(--indigo) 0%, var(--indigo2) 40%, #3D0E6B 100%); display: flex; align-items: center; padding: 120px 28px 80px; position: relative; overflow: hidden; }
+    .hero-orb1 { position: absolute; width: 520px; height: 520px; border-radius: 50%; background: radial-gradient(circle, rgba(244,96,122,0.2), transparent 70%); top: -100px; right: -80px; pointer-events: none; }
+    .hero-orb2 { position: absolute; width: 350px; height: 350px; border-radius: 50%; background: radial-gradient(circle, rgba(107,33,168,0.3), transparent 70%); bottom: -60px; left: -60px; pointer-events: none; }
+    .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; position: relative; z-index: 2; max-width: 1120px; margin: 0 auto; width: 100%; }
+    .hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; border: 1px solid rgba(244,96,122,0.4); background: rgba(244,96,122,0.08); color: var(--coral-l); font-size: 0.72rem; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; padding: 6px 16px; border-radius: 50px; margin-bottom: 24px; font-family: 'Inter', sans-serif; }
+    .hero h1 { font-size: clamp(2.2rem,5vw,3.8rem); color: var(--white); margin-bottom: 20px; }
+    .hero h1 em { font-style: italic; color: var(--coral); }
+    .hero-sub { font-size: 1.02rem; color: rgba(255,255,255,0.72); max-width: 460px; margin-bottom: 38px; line-height: 1.85; }
+    .hero-btns { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 44px; }
+    .hero-badges { display: flex; flex-wrap: wrap; gap: 10px; }
+    .badge { display: inline-flex; align-items: center; gap: 7px; border: 1px solid rgba(255,255,255,0.15); color: rgba(255,255,255,0.75); font-size: 0.78rem; padding: 6px 14px; border-radius: 50px; font-family: 'Inter', sans-serif; }
+    .hero-photo-wrap { position: relative; display: flex; justify-content: center; }
+    .hero-photo { width: 100%; max-width: 420px; aspect-ratio: 3/4; border-radius: 28px; overflow: hidden; background: rgba(107,33,168,0.3); box-shadow: var(--shadow-md); position: relative; }
+    .hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+    .hero-card { position: absolute; bottom: -20px; left: -20px; background: rgba(255,255,255,0.1); backdrop-filter: blur(18px); border: 1px solid rgba(255,255,255,0.2); border-radius: 16px; padding: 16px 20px; color: var(--white); }
+    .hero-card-title { font-family: 'DM Serif Display', serif; font-size: 1.3rem; line-height: 1.1; margin-bottom: 4px; }
+    .hero-card-sub { font-size: 0.75rem; color: var(--coral-l); font-weight: 500; letter-spacing: 0.5px; font-family: 'Inter', sans-serif; }
+    .hero-stars { color: #FFD700; font-size: 0.75rem; margin-top: 6px; letter-spacing: 2px; }
+    @media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; } .hero-photo-wrap { display: none; } }
+
+    /* TRANSFORMACIONES */
+    .transf { background: var(--rose); }
+    .transf-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; }
+    .transf-card { background: var(--white); border-radius: var(--radius); padding: 32px 26px; border: 1px solid rgba(30,10,76,0.08); transition: all 0.3s; }
+    .transf-card:hover { box-shadow: var(--shadow-md); transform: translateY(-5px); border-color: rgba(244,96,122,0.3); }
+    .transf-num { font-family: 'DM Serif Display', serif; font-size: 2.8rem; color: rgba(244,96,122,0.15); line-height: 1; margin-bottom: 4px; }
+    .transf-card h3 { font-size: 1.15rem; color: var(--text); margin-bottom: 10px; }
+    .transf-card p { font-size: 0.87rem; color: var(--textg); line-height: 1.78; }
+    @media (max-width: 900px) { .transf-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 580px) { .transf-grid { grid-template-columns: 1fr; } }
+
+    /* PROGRAMAS */
+    .programas { background: var(--white); }
+    .prog-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; }
+    .prog-card { border-radius: var(--radius); overflow: hidden; border: 1.5px solid rgba(30,10,76,0.08); transition: all 0.3s; position: relative; }
+    .prog-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); border-color: var(--coral); }
+    .prog-header { padding: 28px 26px 20px; }
+    .prog-icon { font-size: 1.8rem; margin-bottom: 12px; display: block; }
+    .prog-tag { font-size: 0.68rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; font-family: 'Inter', sans-serif; }
+    .prog-card h3 { font-size: 1.2rem; margin-bottom: 10px; color: var(--white); }
+    .prog-header p { font-size: 0.85rem; color: rgba(255,255,255,0.7); line-height: 1.75; font-family: 'Inter', sans-serif; }
+    .prog-body { background: var(--white); padding: 20px 26px 26px; }
+    .prog-list { list-style: none; margin-bottom: 22px; display: flex; flex-direction: column; gap: 9px; }
+    .prog-list li { font-size: 0.85rem; color: var(--textg); display: flex; align-items: flex-start; gap: 8px; font-family: 'Inter', sans-serif; }
+    .prog-check { color: var(--coral); font-size: 0.9rem; flex-shrink: 0; margin-top: 1px; }
+    @media (max-width: 900px) { .prog-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; } }
+
+    /* LA COACH */
+    .coach { background: var(--indigo); }
+    .coach-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 72px; align-items: center; }
+    .coach-photo { border-radius: 24px; overflow: hidden; box-shadow: var(--shadow-md); aspect-ratio: 1; background: rgba(107,33,168,0.3); }
+    .coach-photo img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+    .coach-content h2 { color: var(--white); font-size: clamp(1.6rem,3vw,2.2rem); margin-bottom: 10px; }
+    .coach-subtitle { color: var(--coral-l); font-size: 0.88rem; font-weight: 600; letter-spacing: 1px; margin-bottom: 20px; font-family: 'Inter', sans-serif; }
+    .coach-content p { color: rgba(255,255,255,0.68); font-size: 0.95rem; line-height: 1.88; margin-bottom: 22px; font-family: 'Inter', sans-serif; }
+    .coach-certs { display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px; }
+    .coach-cert { display: flex; align-items: center; gap: 12px; background: rgba(255,255,255,0.06); border: 1px solid var(--border); border-radius: 12px; padding: 12px 16px; }
+    .coach-cert-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--coral); flex-shrink: 0; }
+    .coach-cert span { font-size: 0.85rem; color: rgba(255,255,255,0.78); font-family: 'Inter', sans-serif; }
+    @media (max-width: 900px) { .coach-grid { grid-template-columns: 1fr; } }
+
+    /* PROCESO */
+    .proceso { background: var(--rose); }
+    .proceso-steps { display: grid; grid-template-columns: repeat(4,1fr); gap: 22px; }
+    .paso { text-align: center; }
+    .paso-circle { width: 56px; height: 56px; border-radius: 50%; background: white; border: 2px solid rgba(244,96,122,0.3); display: flex; align-items: center; justify-content: center; margin: 0 auto 18px; font-family: 'DM Serif Display', serif; font-size: 1.3rem; color: var(--coral); transition: all 0.3s; }
+    .paso:hover .paso-circle { background: var(--coral); color: var(--white); border-color: var(--coral); box-shadow: 0 6px 20px rgba(244,96,122,0.35); }
+    .paso h4 { font-family: 'Inter', sans-serif; font-size: 0.9rem; font-weight: 600; color: var(--text); margin-bottom: 7px; }
+    .paso p { font-size: 0.8rem; color: var(--textg); line-height: 1.65; font-family: 'Inter', sans-serif; }
+    @media (max-width: 768px) { .proceso-steps { grid-template-columns: 1fr 1fr; gap: 28px; } }
+
+    /* TESTIMONIOS */
+    .testi { background: var(--white); }
+    .testi-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; }
+    .testi-card { background: var(--rose); border-radius: var(--radius); padding: 30px; border: 1px solid rgba(244,96,122,0.12); transition: all 0.3s; }
+    .testi-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: rgba(244,96,122,0.35); }
+    .testi-quote { font-size: 2.5rem; color: var(--coral); opacity: 0.3; line-height: 1; margin-bottom: 4px; font-family: 'DM Serif Display', serif; }
+    .testi-text { font-family: 'DM Serif Display', serif; font-size: 1rem; color: var(--text); line-height: 1.8; font-style: italic; margin-bottom: 20px; }
+    .testi-result { background: rgba(244,96,122,0.08); border-radius: 8px; padding: 8px 12px; font-size: 0.78rem; font-weight: 600; color: var(--coral); margin-bottom: 18px; font-family: 'Inter', sans-serif; }
+    .testi-footer { display: flex; align-items: center; gap: 10px; }
+    .testi-avatar { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Inter', sans-serif; font-weight: 700; font-size: 0.85rem; color: var(--white); flex-shrink: 0; }
+    .testi-name { font-size: 0.88rem; font-weight: 600; color: var(--text); font-family: 'Inter', sans-serif; }
+    .testi-prog { font-size: 0.75rem; color: var(--coral); font-weight: 500; font-family: 'Inter', sans-serif; }
+    @media (max-width: 900px) { .testi-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; } }
+
+    /* CTA FINAL */
+    .cta-section { background: linear-gradient(135deg, var(--indigo) 0%, #3D0E6B 100%); padding: 96px 0; }
+    .cta-box { text-align: center; position: relative; }
+    .cta-box h2 { font-size: clamp(1.8rem,4vw,3rem); color: var(--white); margin-bottom: 14px; }
+    .cta-box p { font-size: 1rem; color: rgba(255,255,255,0.7); max-width: 480px; margin: 0 auto 36px; line-height: 1.8; font-family: 'Inter', sans-serif; }
+    .cta-note { font-size: 0.78rem; color: rgba(255,255,255,0.4); margin-top: 16px; font-family: 'Inter', sans-serif; }
+
+    /* FOOTER */
+    footer { background: #110629; padding: 52px 0 0; border-top: 1px solid var(--border); }
+    .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
+    .footer-logo { font-family: 'DM Serif Display', serif; font-size: 1.1rem; color: var(--white); margin-bottom: 12px; }
+    .footer-logo span { color: var(--coral); }
+    .footer-desc { font-size: 0.85rem; color: rgba(255,255,255,0.4); line-height: 1.8; font-family: 'Inter', sans-serif; }
+    .footer-col h4 { font-size: 0.68rem; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--coral); margin-bottom: 16px; font-family: 'Inter', sans-serif; }
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-links a { font-size: 0.85rem; color: rgba(255,255,255,0.42); transition: color 0.2s; font-family: 'Inter', sans-serif; }
+    .footer-links a:hover { color: var(--coral-l); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.06); padding: 20px 0; text-align: center; font-size: 0.75rem; color: rgba(255,255,255,0.22); font-family: 'Inter', sans-serif; }
+    @media (max-width: 768px) { .footer-grid { grid-template-columns: 1fr; gap: 28px; } }
+
+    /* WA FLOAT */
+    .wa-float { position: fixed; bottom: 26px; right: 26px; z-index: 9999; width: 60px; height: 60px; background: var(--wa); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(37,211,102,0.45); animation: pulse 2.2s infinite; transition: transform 0.2s; }
+    .wa-float:hover { transform: scale(1.1); animation: none; }
+    .wa-tip { position: absolute; right: 70px; background: var(--indigo); color: var(--white); font-size: 0.75rem; font-weight: 600; padding: 7px 14px; border-radius: 50px; white-space: nowrap; opacity: 0; pointer-events: none; transition: opacity 0.2s; font-family: 'Inter', sans-serif; border: 1px solid var(--border); }
+    .wa-tip::after { content: ''; position: absolute; top: 50%; right: -6px; transform: translateY(-50%); border: 6px solid transparent; border-left-color: var(--indigo); border-right: none; }
+    .wa-float:hover .wa-tip { opacity: 1; }
+    @keyframes pulse { 0%{box-shadow:0 0 0 0 rgba(37,211,102,0.6);}70%{box-shadow:0 0 0 14px rgba(37,211,102,0);}100%{box-shadow:0 0 0 0 rgba(37,211,102,0);} }
+  </style>
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <div class="navbar-inner">
+    <a href="#inicio" class="nav-logo">
+      <svg width="28" height="28" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+        <circle cx="18" cy="18" r="16" fill="rgba(244,96,122,0.15)" stroke="rgba(244,96,122,0.4)" stroke-width="1"/>
+        <path d="M18 8 L22 14 L28 15 L23 20 L24 26 L18 23 L12 26 L13 20 L8 15 L14 14 Z" fill="none" stroke="#F4607A" stroke-width="1.5" stroke-linejoin="round"/>
+      </svg>
+      Ana Sofía <span>Reyes</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#programas">Programas</a></li>
+      <li><a href="#coach">Sobre mí</a></li>
+      <li><a href="#proceso">Proceso</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+      <li><a href="https://wa.me/51999888777?text=Hola%20Ana%20Sofía,%20quiero%20agendar%20una%20sesión%20gratuita" target="_blank" rel="noopener" class="nav-cta">Sesión gratis</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#programas" onclick="closeMob()">Programas</a>
+    <a href="#coach" onclick="closeMob()">Sobre mí</a>
+    <a href="#proceso" onclick="closeMob()">Proceso</a>
+    <a href="#contacto" onclick="closeMob()">Contacto</a>
+    <a href="https://wa.me/51999888777?text=Hola%20Ana%20Sofía,%20quiero%20agendar%20una%20sesión%20gratuita" target="_blank" rel="noopener" style="color:var(--coral-l);font-weight:700;">Sesión gratis →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="hero-orb1" aria-hidden="true"></div>
+  <div class="hero-orb2" aria-hidden="true"></div>
+  <div class="hero-grid">
+    <div>
+      <div class="hero-eyebrow fade-in-up visible">
+        <svg width="7" height="7" viewBox="0 0 7 7" fill="#F4607A" aria-hidden="true"><circle cx="3.5" cy="3.5" r="3.5"/></svg>
+        Coach Transformacional Certificada · Lima, Perú
+      </div>
+      <h1 class="fade-in-up visible" style="transition-delay:0.1s">El cambio que buscas<br/>empieza <em>aquí</em></h1>
+      <p class="hero-sub fade-in-up visible" style="transition-delay:0.2s">Acompaño a mujeres y hombres a descubrir su propósito, superar bloqueos y construir la vida que merecen. Con metodología comprobada y resultados reales.</p>
+      <div class="hero-btns fade-in-up visible" style="transition-delay:0.3s">
+        <a href="https://wa.me/51999888777?text=Hola%20Ana%20Sofía,%20quiero%20agendar%20mi%20sesión%20gratuita" target="_blank" rel="noopener" class="btn btn-coral">🌟 Agenda tu sesión gratuita</a>
+        <a href="#programas" class="btn btn-outline">Ver programas</a>
+      </div>
+      <div class="hero-badges fade-in-up visible" style="transition-delay:0.4s">
+        <span class="badge">✓ +200 personas transformadas</span>
+        <span class="badge">✓ Certificada ICF</span>
+        <span class="badge">✓ Sesiones online y presencial</span>
+      </div>
+    </div>
+    <div class="hero-photo-wrap fade-in-up visible" style="transition-delay:0.25s">
+      <div class="hero-photo">
+        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=500&q=85&auto=format&fit=crop&crop=faces" alt="Ana Sofía Reyes — Coach Transformacional" loading="lazy" onerror="this.style.display='none'"/>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-title">+200 vidas<br/>transformadas</div>
+        <div class="hero-card-sub">Lima, Perú · Online Global</div>
+        <div class="hero-stars">★★★★★</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUÉ TRANSFORMAMOS -->
+<section class="transf" id="areas">
+  <div class="container">
+    <div style="text-align:center"><span class="label fade-in-up">Áreas de trabajo</span></div>
+    <h2 class="sec-title fade-in-up" style="transition-delay:0.08s">¿En qué área de tu vida<br/><span style="color:var(--coral)">quieres crecer?</span></h2>
+    <div class="coral-line fade-in-up" style="transition-delay:0.14s"></div>
+    <div class="transf-grid" style="margin-top:48px">
+      <div class="transf-card fade-in-up">
+        <div class="transf-num">01</div>
+        <h3>Propósito de vida</h3>
+        <p>Descubre qué te mueve de verdad, conecta con tus valores más profundos y traza un camino de vida alineado con quien eres.</p>
+      </div>
+      <div class="transf-card fade-in-up" style="transition-delay:0.1s">
+        <div class="transf-num">02</div>
+        <h3>Liderazgo personal</h3>
+        <p>Desarrolla seguridad en ti mismo, mejora tu comunicación y aprende a liderar equipos y relaciones desde tu mejor versión.</p>
+      </div>
+      <div class="transf-card fade-in-up" style="transition-delay:0.2s">
+        <div class="transf-num">03</div>
+        <h3>Bloqueos y creencias</h3>
+        <p>Identifica y elimina las creencias limitantes que te impiden avanzar. Transforma el miedo y la duda en acción y confianza.</p>
+      </div>
+      <div class="transf-card fade-in-up" style="transition-delay:0.06s">
+        <div class="transf-num">04</div>
+        <h3>Carrera y negocios</h3>
+        <p>Toma decisiones claras sobre tu carrera, da el salto que postergabas o impulsa tu negocio con mentalidad de éxito.</p>
+      </div>
+      <div class="transf-card fade-in-up" style="transition-delay:0.16s">
+        <div class="transf-num">05</div>
+        <h3>Relaciones y familia</h3>
+        <p>Mejora vínculos, establece límites sanos y construye relaciones más plenas y auténticas en todas las áreas de tu vida.</p>
+      </div>
+      <div class="transf-card fade-in-up" style="transition-delay:0.26s">
+        <div class="transf-num">06</div>
+        <h3>Bienestar integral</h3>
+        <p>Equilibra cuerpo, mente y emociones. Gestiona el estrés, recupera energía y cultiva hábitos que nutran tu vida diaria.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMAS -->
+<section class="programas" id="programas">
+  <div class="container">
+    <div style="text-align:center"><span class="label fade-in-up">Programas</span></div>
+    <h2 class="sec-title fade-in-up" style="transition-delay:0.08s">Elige el camino que<br/><span style="color:var(--coral)">te llama</span></h2>
+    <div class="coral-line fade-in-up" style="transition-delay:0.14s"></div>
+    <div class="prog-grid" style="margin-top:48px">
+      <!-- PROGRAMA 1 -->
+      <div class="prog-card fade-in-up">
+        <div class="prog-header" style="background:linear-gradient(135deg,#1E0A4C,#3D1585)">
+          <span class="prog-icon">🌱</span>
+          <div class="prog-tag" style="color:rgba(244,96,122,0.8)">Inicio</div>
+          <h3>Despertar</h3>
+          <p>Para quienes sienten que algo debe cambiar pero no saben por dónde empezar. Un proceso de autoconocimiento profundo.</p>
+        </div>
+        <div class="prog-body">
+          <ul class="prog-list">
+            <li><span class="prog-check">✦</span>4 sesiones individuales (1h c/u)</li>
+            <li><span class="prog-check">✦</span>Evaluación de valores y creencias</li>
+            <li><span class="prog-check">✦</span>Herramientas de autoconocimiento</li>
+            <li><span class="prog-check">✦</span>Acompañamiento por WhatsApp</li>
+          </ul>
+          <a href="https://wa.me/51999888777?text=Hola%20Ana%20Sofía,%20me%20interesa%20el%20programa%20Despertar" target="_blank" rel="noopener" class="btn btn-outline-coral" style="width:100%;justify-content:center;">Me interesa</a>
+        </div>
+      </div>
+      <!-- PROGRAMA 2 -->
+      <div class="prog-card fade-in-up" style="transition-delay:0.12s;border-color:var(--coral);border-width:2px">
+        <div style="position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--coral);color:white;font-size:0.7rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:5px 16px;border-radius:50px;white-space:nowrap;font-family:'Inter',sans-serif">⭐ Más popular</div>
+        <div class="prog-header" style="background:linear-gradient(135deg,var(--coral-d),var(--coral))">
+          <span class="prog-icon">🔥</span>
+          <div class="prog-tag" style="color:rgba(255,255,255,0.7)">Transformación</div>
+          <h3>Renace</h3>
+          <p>El programa completo para una transformación real y duradera. Ideal si quieres resultados concretos y rápidos.</p>
+        </div>
+        <div class="prog-body">
+          <ul class="prog-list">
+            <li><span class="prog-check">✦</span>8 sesiones individuales (1h c/u)</li>
+            <li><span class="prog-check">✦</span>Plan de acción personalizado</li>
+            <li><span class="prog-check">✦</span>Ejercicios y recursos exclusivos</li>
+            <li><span class="prog-check">✦</span>Soporte ilimitado entre sesiones</li>
+            <li><span class="prog-check">✦</span>Sesión de cierre y celebración</li>
+          </ul>
+          <a href="https://wa.me/51999888777?text=Hola%20Ana%20Sofía,%20me%20interesa%20el%20programa%20Renace" target="_blank" rel="noopener" class="btn btn-coral" style="width:100%;justify-content:center;">Quiero este programa</a>
+        </div>
+      </div>
+      <!-- PROGRAMA 3 -->
+      <div class="prog-card fade-in-up" style="transition-delay:0.24s">
+        <div class="prog-header" style="background:linear-gradient(135deg,#280D62,#6B21A8)">
+          <span class="prog-icon">👑</span>
+          <div class="prog-tag" style="color:rgba(245,230,200,0.8)">Premium</div>
+          <h3>Élite</h3>
+          <p>Para líderes, emprendedores y ejecutivos que buscan maximizar su potencial y llevar todo a otro nivel.</p>
+        </div>
+        <div class="prog-body">
+          <ul class="prog-list">
+            <li><span class="prog-check">✦</span>12 sesiones individuales</li>
+            <li><span class="prog-check">✦</span>Diagnóstico 360° completo</li>
+            <li><span class="prog-check">✦</span>Coaching de liderazgo avanzado</li>
+            <li><span class="prog-check">✦</span>Acceso a comunidad privada</li>
+            <li><span class="prog-check">✦</span>6 meses de acompañamiento</li>
+          </ul>
+          <a href="https://wa.me/51999888777?text=Hola%20Ana%20Sofía,%20me%20interesa%20el%20programa%20Élite" target="_blank" rel="noopener" class="btn btn-outline-coral" style="width:100%;justify-content:center;">Me interesa</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LA COACH -->
+<section class="coach" id="coach">
+  <div class="container">
+    <div class="coach-grid">
+      <div class="fade-in-up">
+        <div class="coach-photo">
+          <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=500&q=85&auto=format&fit=crop&crop=faces" alt="Ana Sofía Reyes" loading="lazy" onerror="this.style.display='none'"/>
+        </div>
+      </div>
+      <div class="fade-in-up coach-content" style="transition-delay:0.2s">
+        <span class="label">Sobre mí</span>
+        <h2>Ana Sofía Reyes</h2>
+        <p class="coach-subtitle">Coach Transformacional Certificada · ICF · Lima</p>
+        <p>Soy coach certificada por la International Coaching Federation (ICF) con más de 8 años acompañando a personas a reconectar con su poder interior y crear cambios reales en sus vidas.</p>
+        <p>Mi propia transformación —después de años sintiéndome perdida en una carrera que no me llenaba— me llevó al coaching. Hoy dedico mi vida a que otros encuentren lo que yo tardé años en descubrir.</p>
+        <div class="coach-certs">
+          <div class="coach-cert"><span class="coach-cert-dot"></span><span>Certificación ICF — International Coaching Federation</span></div>
+          <div class="coach-cert"><span class="coach-cert-dot"></span><span>Programación Neurolingüística (PNL) — Nivel Practitioner</span></div>
+          <div class="coach-cert"><span class="coach-cert-dot"></span><span>Psicología Positiva — Universidad de Pennsylvania</span></div>
+          <div class="coach-cert"><span class="coach-cert-dot"></span><span>+200 clientes transformados en 8 años</span></div>
+        </div>
+        <a href="https://wa.me/51999888777?text=Hola%20Ana%20Sofía,%20quiero%20agendar%20mi%20sesión%20gratuita" target="_blank" rel="noopener" class="btn btn-coral">Agendar sesión gratuita</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESO -->
+<section class="proceso" id="proceso">
+  <div class="container">
+    <div style="text-align:center"><span class="label fade-in-up">Cómo funciona</span></div>
+    <h2 class="sec-title fade-in-up" style="transition-delay:0.08s">Tu camino de <span style="color:var(--coral)">transformación</span></h2>
+    <div class="coral-line fade-in-up" style="transition-delay:0.14s"></div>
+    <div class="proceso-steps" style="margin-top:56px">
+      <div class="paso fade-in-up"><div class="paso-circle">1</div><h4>Sesión gratuita</h4><p>Nos conocemos, evalúo tu situación y te propongo el programa ideal para ti.</p></div>
+      <div class="paso fade-in-up" style="transition-delay:0.1s"><div class="paso-circle">2</div><h4>Diagnóstico</h4><p>Exploramos en profundidad tus creencias, patrones y lo que realmente quieres cambiar.</p></div>
+      <div class="paso fade-in-up" style="transition-delay:0.2s"><div class="paso-circle">3</div><h4>Proceso</h4><p>Sesiones semanales con herramientas concretas y acompañamiento entre sesiones.</p></div>
+      <div class="paso fade-in-up" style="transition-delay:0.3s"><div class="paso-circle">4</div><h4>Tu nueva vida</h4><p>Integras los cambios, celebramos tus logros y tienes claridad para seguir avanzando.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIOS -->
+<section class="testi">
+  <div class="container">
+    <div style="text-align:center"><span class="label fade-in-up">Testimonios</span></div>
+    <h2 class="sec-title fade-in-up" style="transition-delay:0.08s">Historias de <span style="color:var(--coral)">transformación real</span></h2>
+    <div class="coral-line fade-in-up" style="transition-delay:0.14s"></div>
+    <div class="testi-grid" style="margin-top:48px">
+      <div class="testi-card fade-in-up">
+        <div class="testi-quote">"</div>
+        <p class="testi-text">Llegué sin saber qué quería de mi vida. Hoy tengo mi propio negocio, relaciones más sanas y me siento libre por primera vez en años.</p>
+        <div class="testi-result">✦ Resultado: Cambió de carrera y emprendió</div>
+        <div class="testi-footer"><div class="testi-avatar" style="background:var(--coral)">CG</div><div><div class="testi-name">Claudia G., 34</div><div class="testi-prog">Programa Renace</div></div></div>
+      </div>
+      <div class="testi-card fade-in-up" style="transition-delay:0.12s">
+        <div class="testi-quote">"</div>
+        <p class="testi-text">Trabajé con Ana Sofía en un momento de crisis total. Su acompañamiento me dio herramientas que sigo usando cada día. Fue un antes y un después.</p>
+        <div class="testi-result">✦ Resultado: Superó ansiedad crónica</div>
+        <div class="testi-footer"><div class="testi-avatar" style="background:var(--indigo2)">MP</div><div><div class="testi-name">Marcos P., 41</div><div class="testi-prog">Programa Élite</div></div></div>
+      </div>
+      <div class="testi-card fade-in-up" style="transition-delay:0.24s">
+        <div class="testi-quote">"</div>
+        <p class="testi-text">Después de 3 sesiones ya tenía más claridad que en años de terapia. No es que la terapia esté mal, es que el coaching me dio acción inmediata.</p>
+        <div class="testi-result">✦ Resultado: Mejoró relación de pareja</div>
+        <div class="testi-footer"><div class="testi-avatar" style="background:var(--purple)">LR</div><div><div class="testi-name">Lucía R., 28</div><div class="testi-prog">Programa Despertar</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-section" id="contacto">
+  <div class="container">
+    <div class="cta-box fade-in-up">
+      <span class="label" style="margin-bottom:20px">Primera sesión gratis</span>
+      <h2>¿Lista para transformar<br/><em style="color:var(--coral)">tu vida?</em></h2>
+      <p>Agenda tu sesión de diagnóstico gratuita. Sin compromiso, sin presión. Solo una conversación honesta sobre dónde estás y a dónde quieres llegar.</p>
+      <a href="https://wa.me/51999888777?text=Hola%20Ana%20Sofía,%20quiero%20agendar%20mi%20sesión%20de%20diagnóstico%20gratuita" target="_blank" rel="noopener" class="btn btn-coral" style="font-size:1rem;padding:18px 40px">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Agendar mi sesión gratuita
+      </a>
+      <p class="cta-note">Sin costo · Sin compromiso · 45 minutos que pueden cambiar tu vida</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">Ana Sofía <span>Reyes</span></div>
+        <p class="footer-desc">Coach Transformacional Certificada ICF. Acompañando a personas a vivir con propósito desde Lima, Perú.</p>
+      </div>
+      <div class="footer-col"><h4>Navegación</h4><ul class="footer-links"><li><a href="#areas">Áreas</a></li><li><a href="#programas">Programas</a></li><li><a href="#coach">Sobre mí</a></li><li><a href="#contacto">Contacto</a></li></ul></div>
+      <div class="footer-col"><h4>Contacto</h4><p style="font-size:0.85rem;color:rgba(255,255,255,0.38);line-height:2;font-family:'Inter',sans-serif">Online y presencial<br/>📍 Lima, Perú<br/><span style="color:var(--coral-l)">+51 999 888 777</span></p></div>
+    </div>
+  </div>
+  <div class="footer-bottom"><div class="container">© 2025 Ana Sofía Reyes · Coach Transformacional · Lima, Perú<br/><span style="opacity:0.4;font-size:0.7rem">Web diseñada por <a href="altaweb.html" style="color:rgba(244,96,122,0.4)">Alta Web</a></span></div></div>
+</footer>
+
+<a href="https://wa.me/51999888777?text=Hola%20Ana%20Sofía,%20quiero%20agendar%20una%20sesión%20gratuita" target="_blank" rel="noopener" class="wa-float" aria-label="Agendar sesión por WhatsApp">
+  <span class="wa-tip">¡Agenda tu sesión gratis!</span>
+  <svg width="30" height="30" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+  const nb=document.getElementById('navbar'),hb=document.getElementById('hamburger'),mm=document.getElementById('mobileMenu');
+  window.addEventListener('scroll',()=>nb.classList.toggle('scrolled',scrollY>50),{passive:true});
+  hb.addEventListener('click',()=>{const o=mm.classList.toggle('open');hb.classList.toggle('open',o);hb.setAttribute('aria-expanded',String(o));});
+  function closeMob(){mm.classList.remove('open');hb.classList.remove('open');hb.setAttribute('aria-expanded','false');}
+  const els=document.querySelectorAll('.fade-in-up');
+  els.forEach(e=>{if(!e.closest('.hero'))e.classList.remove('visible');});
+  const obs=new IntersectionObserver(en=>{en.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.1,rootMargin:'0px 0px -32px 0px'});
+  els.forEach(e=>{if(!e.closest('.hero'))obs.observe(e);});
+</script>
+</body>
+</html>
