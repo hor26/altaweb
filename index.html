@@ -26,7 +26,8 @@
   <!-- End Meta Pixel Code -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Inter:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Inter:wght@400;500&display=swap" /></noscript>
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -949,6 +950,7 @@
 <!-- ========================
      HERO
 ======================== -->
+<main>
 <section class="hero" id="inicio">
   <div class="hero-blob" aria-hidden="true"></div>
   <div class="hero-blob2" aria-hidden="true"></div>
@@ -1055,7 +1057,7 @@
       <!-- DEMO BÁSICO — PELUQUERÍA -->
       <div class="demo-card fade-in-up">
         <div class="demo-preview" style="background:#2A1A1E;padding:0;overflow:hidden;">
-          <img src="demos/img StudioBella Basico.png" alt="Demo Estudio Bella" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;">
+          <img src="demos/img StudioBella Basico.webp" alt="Demo Estudio Bella" width="600" height="900" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;">
         </div>
         <div class="demo-body">
           <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
@@ -1074,7 +1076,7 @@
       <!-- DEMO PRO — RESTAURANTE -->
       <div class="demo-card fade-in-up" style="transition-delay:0.1s">
         <div class="demo-preview" style="background:#1A0A00;padding:0;overflow:hidden;">
-          <img src="demos/img Restaurant.png" alt="Demo La Tradición" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;">
+          <img src="demos/img Restaurant.webp" alt="Demo La Tradición" width="600" height="900" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;">
         </div>
         <div class="demo-body">
           <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
@@ -1093,7 +1095,7 @@
       <!-- DEMO PRO — ABOGADO -->
       <div class="demo-card fade-in-up" style="transition-delay:0.15s">
         <div class="demo-preview" style="background:#0F1923;padding:0;overflow:hidden;">
-          <img src="demos/img abogado.png" alt="Demo Vásquez & Asociados" style="width:100%;height:auto;display:block;">
+          <img src="demos/img abogado.webp" alt="Demo Vásquez & Asociados" width="600" height="900" style="width:100%;height:auto;display:block;">
         </div>
         <div class="demo-body">
           <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
@@ -1112,7 +1114,7 @@
       <!-- DEMO PREMIUM — SPA -->
       <div class="demo-card fade-in-up" style="transition-delay:0.2s">
         <div class="demo-preview" style="background:#1A1410;padding:0;overflow:hidden;">
-          <img src="demos/img Spa Premium.png" alt="Demo Serenity Spa" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;">
+          <img src="demos/img Spa Premium.webp" alt="Demo Serenity Spa" width="600" height="900" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;">
         </div>
         <div class="demo-body">
           <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
@@ -1131,7 +1133,7 @@
       <!-- DEMO A MEDIDA — HAYDEE -->
       <div class="demo-card fade-in-up" style="transition-delay:0.25s;border-color:var(--lime);">
         <div class="demo-preview" style="background:#0A0A0F;padding:0;overflow:hidden;">
-          <img src="demos/img salud materna.png" alt="Demo Salud Materna" style="width:100%;height:auto;display:block;">
+          <img src="demos/img salud materna.webp" alt="Demo Salud Materna" width="600" height="900" style="width:100%;height:auto;display:block;">
         </div>
         <div class="demo-body">
           <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
@@ -1202,7 +1204,7 @@
           <li><span class="precio-check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#A3E635" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>SEO intermedio (Search Console + velocidad)</li>
           <li><span class="precio-check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#A3E635" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>Entrega en 5 días</li>
           <li><span class="precio-check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#A3E635" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>3 rondas de ajustes</li>
-          <li><span class="precio-check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#A3E635" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>Soporte 30 días post entrega</li>
+          <li><span class="precio-check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#A3E635" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>Garantía de satisfacción</li>
         </ul>
         <a href="https://wa.me/51973077794?text=Hola,%20quiero%20el%20paquete%20Pro%20de%20Alta%20Web" target="_blank" rel="noopener" class="btn btn-violet" style="width:100%;justify-content:center;">Quiero este plan</a>
       </div>
@@ -1264,27 +1266,27 @@
     <div class="proceso-steps">
       <div class="paso fade-in-up">
         <div class="paso-num">01</div>
-        <h4>Nos escribes</h4>
+        <h3>Nos escribes</h3>
         <p>Me contactas por WhatsApp y me cuentas qué tipo de negocio tienes.</p>
       </div>
       <div class="paso fade-in-up" style="transition-delay:0.1s">
         <div class="paso-num">02</div>
-        <h4>Me envías la info</h4>
+        <h3>Me envías la info</h3>
         <p>Logo, fotos, textos, colores y datos de contacto. Te guío paso a paso.</p>
       </div>
       <div class="paso fade-in-up" style="transition-delay:0.2s">
         <div class="paso-num">03</div>
-        <h4>Diseño tu web</h4>
+        <h3>Diseño tu web</h3>
         <p>En 3–5 días tienes un preview listo para revisar antes de publicar.</p>
       </div>
       <div class="paso fade-in-up" style="transition-delay:0.3s">
         <div class="paso-num">04</div>
-        <h4>Ajustes y cambios</h4>
+        <h3>Ajustes y cambios</h3>
         <p>Me dices qué cambiar. Tienes 2–3 rondas de revisión incluidas.</p>
       </div>
       <div class="paso fade-in-up" style="transition-delay:0.4s">
         <div class="paso-num">05</div>
-        <h4>¡Publicamos!</h4>
+        <h3>¡Publicamos!</h3>
         <p>Conectamos tu dominio y tu web queda online. Ya tienes presencia digital.</p>
       </div>
     </div>
@@ -1313,6 +1315,7 @@
 <!-- ========================
      FOOTER
 ======================== -->
+</main>
 <footer>
   <div class="container">
     <div class="footer-grid">
@@ -1330,7 +1333,7 @@
       </div>
 
       <div class="footer-col">
-        <h4>Navegación</h4>
+        <h3>Navegación</h3>
         <ul class="footer-links">
           <li><a href="#demos">Portfolio</a></li>
           <li><a href="#precios">Precios</a></li>
@@ -1340,7 +1343,7 @@
       </div>
 
       <div class="footer-col">
-        <h4>Síguenos</h4>
+        <h3>Síguenos</h3>
         <div class="social-links">
           <a href="#" class="social-link" aria-label="Instagram de Alta Web" title="Instagram">
             <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="rgba(255,255,255,0.7)"/></svg>
